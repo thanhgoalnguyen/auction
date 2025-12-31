@@ -1,0 +1,79 @@
+@use '../styles/tokens' as *;
+
+$card-size: 64px;
+
+.wrapper {
+  position:   relative;
+  width:      100%;
+  height:     100vh;
+  overflow:   hidden;
+  background: #000; // fallback
+  color:      #fff;
+}
+
+.bg {
+  position:            absolute;
+  inset:               0;
+  background-repeat:   no-repeat;
+  background-size:     contain;
+  background-position: center;
+  filter:              none;
+  transform:           translateZ(0);
+  background-image:    url('/images/loading_bg.jpeg');
+}
+
+.scrim {
+  position:   absolute;
+  inset:      0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.center {
+  position:      absolute;
+  inset:         0;
+  display:       grid;
+  place-items:   center;
+  align-content: center;
+  gap:           16px;
+  text-align:    center;
+}
+
+.tagline {
+  max-width:      80ch;
+  font-size:      $font-size-base;
+  font-weight:    400;
+  opacity:        0.9;
+  letter-spacing: 0.06em;
+  text-shadow:    0 1px 2px rgba(0, 0, 0, 0.4);
+  margin:         0 0 4px 0;
+}
+
+.loaderCard {
+  width:       $card-size * 1.25;
+  height:      $card-size * 1.25;
+  background:  rgba(0, 0, 0, 0.8);
+  display:     grid;
+  place-items: center;
+  box-shadow:  0 8px 24px rgba(0, 0, 0, 0.35);
+  border:      1px solid white;
+}
+
+.spinner {
+  --line:   2px;
+  --size:   #{$card-size};
+  position: relative;
+  width:    var(--size);
+  height:   var(--size);
+
+  img {
+    object-fit: cover;
+    width:      64px;
+  }
+}
+
+.loadingText {
+  margin:         2px 0 0 0;
+  font-size:      $font-size-small;
+  letter-spacing: 0.15em;
+  opacity:        0.85;
+}

@@ -1,0 +1,112 @@
+import { Link } from "react-router-dom";
+
+import PageHeader from "@/components/layout/PageHeader";
+import PrivacyTerms from "@/components/ui/PrivacyTerms";
+
+import avatar from "@/assets/icon/myPage/avatar.svg";
+import star from "@/assets/icon/myPage/star.svg";
+import blonze from "@/assets/icon/myPage/blonze.svg"
+import arrowRight from "@/assets/icon/searchTop/arrow-right.svg";
+
+export default function MyPage() {
+	const listProgress = [
+		{
+			label: "星５",
+			value: 31,
+			percent: 80
+		},
+		{
+			label: "星4",
+			value: 6,
+			percent: 30
+		},
+		{
+			label: "星3",
+			value: 1,
+			percent: 5
+		},
+		{
+			label: "星2",
+			value: 0,
+			percent: 0
+		},
+		{
+			label: "星1",
+			value: 0,
+			percent: 0
+		},
+	]
+	return (
+		<div className="my-page flex flex-col items-center w-full h-max min-h-full">
+			<PageHeader title="マイページ"/>
+			<div className="flex flex-col gap-7 w-full max-w-[768px] pt-[23px] pb-[58px] text-[11px] leading-[13px]">
+				<div className="grid grid-cols-[80fr_196fr] gap-[38px] px-10">
+					<div className="flex flex-col items-center gap-2">
+						<img 
+							src={avatar} 
+							alt="avatar"
+							className='w-full max-w-[79px] aspect-square'
+						/>
+						<p className="text-[15px] leading-[18px] text-neutral-600">Y.Sara1985</p>
+					</div>
+					<div className="flex items-center gap-[18px]">
+						<div className="grow pt-[3px]">
+							<div className="flex items-center w-full mb-2">
+								<img 
+									src={star} 
+									alt="star"
+									className='w-4 h-[15px] mr-[5px]'
+								/>
+								<p className="text-[12px] leading-[15px] mr-[9px]">4.2</p>
+								<p className="text-[6px] leading-[7px] mr-[22px]">/ 38件の評価</p>
+								<img 
+									src={blonze} 
+									alt="blonze"
+									className='w-[14px] h-4 mr-2'
+								/>
+								<p className="text-[12px] leading-[15px]">Blonze</p>
+							</div>
+							<div className="flex flex-col gap-1 mb-[10px]">
+								{listProgress?.map((item, index) => 
+									<div className="flex items-center gap-1" key={index}>
+										<p className="w-[14px] text-[7px] leading-[8px] text-neutral-600 text-left">{item?.label}</p>
+										<div className="w-[58px] h-[5px] border border-neutral-800">
+											<div style={{ width: item?.percent + '%' }} className="h-full bg-red-400"></div>
+										</div>
+										<p className="text-[5px] leading-[6px] text-neutral-600">{item?.value}</p>
+									</div>
+								)}
+							</div>
+							<div className="flex justify-between items-center w-full pl-[2px] pr-1">
+								<div className="flex items-center gap-[11px]">
+									<p className="text-[10px] leading-[12px] text-neutral-600">６</p>
+									<p className="text-[6px] leading-[7px] text-neutral-700">出品数</p>
+								</div>
+								<div className="flex items-center gap-[11px]">
+									<p className="text-[10px] leading-[12px] text-neutral-600">16</p>
+									<p className="text-[6px] leading-[7px] text-neutral-700">フォロワー</p>
+								</div>
+								<div className="flex items-center gap-[11px]">
+									<p className="text-[10px] leading-[12px] text-neutral-600">4</p>
+									<p className="text-[6px] leading-[7px] text-neutral-700">フォロー</p>
+								</div>
+							</div>
+						</div>
+						<Link to="/">
+							<img 
+								src={arrowRight} 
+								alt="arrow"
+								className='w-[5px] h-[8px]'
+							/>
+						</Link>
+						
+					</div>
+				</div>
+				<div className="w-full px-3">
+
+				</div>
+			</div>
+			<PrivacyTerms showMore/>
+		</div>
+	);
+}

@@ -1,0 +1,113 @@
+@use '../styles/tokens' as *;
+
+.container {
+  display:        flex;
+  flex-direction: column;
+  gap:            $space-size-medium;
+}
+
+.hero {
+  position:        relative;
+  height:          180px;
+  border-radius:   $border-radius-large;
+  padding:         20px;
+  background:      linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 64, 175, 0.6));
+  display:         flex;
+  flex-direction:  column;
+  justify-content: space-between;
+  color:           white;
+}
+
+.heroBadge {
+  align-self:     flex-start;
+  padding:        6px $space-size-small;
+  border-radius:  999px;
+  background:     rgba(255, 255, 255, 0.15);
+  font-size:      $font-size-small;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight:    700;
+}
+
+.heroBottom {
+  display:     flex;
+  align-items: center;
+  gap:         $space-size-small;
+}
+
+.heroBottom p {
+  margin:      0;
+  font-weight: 600;
+}
+
+.heroBottom small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.productRow {
+  display:               grid;
+  grid-template-columns: 120px 1fr;
+  gap:                   $space-size-base;
+  align-items:           center;
+}
+
+.productRow img {
+  width:         100%;
+  height:        120px;
+  object-fit:    cover;
+  border-radius: $border-radius-medium;
+}
+
+.label {
+  margin:         0;
+  font-size:      $font-size-small;
+  letter-spacing: 0.08em;
+  color:          $color-text-secondary;
+  text-transform: uppercase;
+}
+
+.helper {
+  margin: 6px 0 0;
+  color:  $color-text-secondary;
+}
+
+.actions {
+  display:   flex;
+  gap:       $space-size-small;
+  flex-wrap: wrap;
+}
+
+.myBid {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             $space-size-small;
+  padding:         $space-size-small;
+  background:      rgba(248, 250, 252, 0.6);
+  border-radius:   $border-radius-medium;
+  font-weight:     600;
+}
+
+.timeline {
+  margin:         0;
+  padding:        0;
+  list-style:     none;
+  display:        flex;
+  flex-direction: column;
+  gap:            $space-size-small;
+}
+
+.timeline li {
+  display:       flex;
+  gap:           $space-size-small;
+  background:    rgba(248, 250, 252, 0.7);
+  padding:       $space-size-small;
+  border-radius: $border-radius-medium;
+}
+
+.time {
+  font-size:   $font-size-small;
+  color:       $color-text-secondary;
+  font-weight: 600;
+  width:       52px;
+}

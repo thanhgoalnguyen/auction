@@ -1,0 +1,270 @@
+@use '../styles/tokens' as *;
+
+.container {
+  width:                 100%;
+  margin:                0 auto;
+  padding:               0;
+  background:            #00000000;
+  background-size:       cover;
+  height:                100vh;
+  height:                100dvh;
+  min-height:            100svh;
+  max-height:            100lvh;
+  position:              relative;
+  display:               flex;
+  flex-direction:        column;
+  padding-top:           env(safe-area-inset-top);
+  scroll-padding-bottom: calc($space-size-base + env(safe-area-inset-bottom));
+  overflow:              hidden;
+
+  .sectionProduct {
+    gap:            $space-size-small;
+    display:        flex;
+    flex-direction: column;
+    padding:        $space-size-base 0 0 $space-size-base;
+    position:       relative;
+    animation:      slideDownEase 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    transform:      translateY(-100%);
+    opacity:        0;
+    flex-shrink:    0;
+
+    .productSlogan {
+      font-size:   clamp($font-size-large, 3.5vw, $font-size-xlarge);
+      color:       white;
+      font-weight: $font-weight-bold;
+      text-align:  center;
+    }
+  }
+
+  @keyframes slideDownEase {
+    0% {
+      transform: translateY(-100%);
+      opacity:   0;
+    }
+    60% {
+      transform: translateY(-10px);
+      opacity:   0.8;
+    }
+    100% {
+      transform: translateY(0);
+      opacity:   1;
+    }
+  }
+
+  .sectionContent {
+    padding:        0 $space-size-base;
+    flex:           1;
+    display:        flex;
+    flex-direction: column;
+    min-height:     0;
+    animation:      slideUpEase 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
+  }
+
+  @keyframes slideUpEase {
+    0% {
+      transform: translateY(100%);
+      opacity:   0;
+    }
+    60% {
+      transform: translateY(-10px);
+      opacity:   0.8;
+    }
+    100% {
+      transform: translateY(0);
+      opacity:   1;
+    }
+  }
+}
+
+@media (min-width: $desktop-content-width) {
+  .container {
+    width: $mobile-content-width;
+  }
+}
+
+.headerSection {
+  margin-bottom: $space-size-medium - $space-size-nano;
+  position:      absolute;
+  top:           14px;
+  right:         0;
+}
+
+.sellerInfo {
+  display:         flex;
+  align-items:     center;
+  gap:             $space-size-small;
+  padding:         0 $space-size-small;
+  border-radius:   $space-size-small;
+  justify-content: end;
+  color:           white;
+}
+
+.rating {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  font-size:       clamp(9px, 2.2vw, 11px);
+}
+
+.productSection {
+  display:        flex;
+  flex-direction: row;
+  gap:            $space-size-medium;
+}
+
+.productCard {
+  margin-bottom: 20px;
+  border-radius: 20px;
+  overflow:      hidden;
+  box-shadow:    0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.productImageContainer {
+  position:      relative;
+  height:        clamp(150px, 25vh, 220px);
+  overflow:      hidden;
+  border-radius: 15px;
+  width:         40%
+}
+
+.productImage {
+  width:      100%;
+  height:     100%;
+  object-fit: cover;
+}
+
+.productInfo {
+  flex:           2;
+  width:          60%;
+  background:     rgba(256, 256, 256, 0.4);
+  border:         1px solid black;
+  border-radius:  10px;
+  padding:        10px;
+  margin-bottom:  20px;
+  align-self:     end;
+  display:        flex;
+  font-size:      clamp(11px, 1.8vw, $space-size-small);
+  flex-direction: column;
+}
+
+.numBids {
+  font-size:   clamp(18px, 5vw, 28px);
+  font-weight: bold;
+  color:       red;
+  align-self:  center;
+  transform:   translateX(20px);
+
+  .number {
+    font-family: $font-family-num-base;
+  }
+}
+
+.productSubtitle {
+  align-self: end;
+}
+
+.congratulations {
+  bottom:                  0;
+  width:                   100%;
+  right:                   0;
+  padding:                 clamp($space-size-micro, 3vh, $space-size-large) clamp($space-size-micro, 3vw, $space-size-base);
+  background:              rgb(119, 128, 143, 0.7);
+  border-top-left-radius:  $space-size-large;
+  border-top-right-radius: $space-size-large;
+  display:                 flex;
+  align-items:             center;
+  flex-direction:          column;
+  margin-top:              auto;
+}
+
+.congratulationsImg {
+  width:         clamp(80px, 16vh, 180px);
+  height:        clamp(80px, 16vh, 180px);
+  border-radius: 50%;
+}
+
+.moreInfo {
+  display:         flex;
+  flex-direction:  row;
+  justify-content: center;
+  gap:             clamp($space-size-base, 6vw, 38px);
+  margin:          clamp($space-size-nano, 1vh, $space-size-micro) 0;
+
+  p {
+    font-size: clamp($space-size-base, 4vh, 30px);
+    color:     white;
+    margin:    0
+  }
+}
+
+.moreInfoContent {
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+
+  svg {
+    width:  clamp($space-size-base, 4vh, 30px);
+    height: clamp($space-size-base, 4vh, 30px);
+  }
+}
+
+.congratulationsPrice {
+  font-size:   clamp(24px, 6vh, 46px);
+  color:       #fff85d;
+  font-weight: $font-weight-bold;
+  margin:      clamp($space-size-nano, 1vh, $space-size-micro) 0;
+  font-family: $font-family-num-base;
+
+  .currency {
+    font-size:   clamp(10px, 2.5vh, $font-size-large);
+    color:       black;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.congratulationsTxt {
+  p {
+    color:       #ffad40;
+    font-size:   clamp(18px, 4.5vh, 32px);
+    font-weight: bold;
+    margin:      clamp(2px, 1vh, 10px);
+  }
+}
+
+.englishNotice {
+  p {
+    font-size: clamp(12px, 3vh, 22px);
+    color:     white;
+    margin:    clamp(2px, 0.5vh, $space-size-nano) 0;
+  }
+}
+
+.jpNotice {
+  p {
+    font-size: clamp(10px, 2.5vh, 15px);
+    color:     white;
+    margin:    clamp(2px, 0.5vh, $space-size-nano) 0;
+  }
+}
+
+.paymentNotice {
+  margin-top: clamp($space-size-nano, 1vh, 10px);
+
+  p {
+    color:       white;
+    font-size:   clamp(7px, 1.8vh, 10px);
+    line-height: 1.3;
+    margin:      0;
+  }
+}
+
+.urlNotice {
+  p {
+    color:           white;
+    font-size:       clamp(6px, 1.5vh, $space-size-micro);
+    line-height:     1.2;
+    margin:          clamp(2px, 0.5vh, $space-size-nano) 0;
+    word-break:      break-all;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,93 @@
+@use '../styles/tokens' as *;
+
+.container {
+  display:        flex;
+  flex-direction: column;
+  gap:            $space-size-medium;
+}
+
+.preview {
+  position:        relative;
+  height:          220px;
+  border-radius:   $border-radius-large;
+  background:      linear-gradient(135deg, rgba(255, 92, 92, 0.6), rgba(255, 92, 92, 0.2));
+  display:         flex;
+  flex-direction:  column;
+  justify-content: space-between;
+  padding:         20px;
+  color:           white;
+}
+
+.previewBadge {
+  font-size:      $font-size-small;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight:    700;
+}
+
+.previewControls {
+  display:   flex;
+  gap:       $space-size-small;
+  flex-wrap: wrap;
+}
+
+.form {
+  display:        flex;
+  flex-direction: column;
+  gap:            $space-size-base;
+}
+
+.queue {
+  display:        flex;
+  flex-direction: column;
+  gap:            $space-size-small;
+}
+
+.queueItem {
+  display:               grid;
+  grid-template-columns: 72px 1fr auto;
+  gap:                   $space-size-small;
+  align-items:           center;
+  background:            rgba(248, 250, 252, 0.8);
+  border-radius:         $border-radius-medium;
+  padding:               $space-size-small;
+}
+
+.queueItem img {
+  width:         $space-size-5xlarge;
+  height:        $space-size-5xlarge;
+  object-fit:    cover;
+  border-radius: $border-radius-medium;
+}
+
+.queueItem p {
+  margin:      0;
+  font-weight: 600;
+}
+
+.queueItem small {
+  color: $color-text-secondary;
+}
+
+.statusRow {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             $space-size-small;
+  padding:         $space-size-small;
+  border-radius:   $border-radius-medium;
+  background:      rgba(248, 250, 252, 0.7);
+}
+
+.statusLabel {
+  margin:         0;
+  font-size:      $font-size-small;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color:          $color-text-secondary;
+}
+
+.statusDescription {
+  margin: $space-size-nano 0 0;
+  color:  $color-text-secondary;
+}

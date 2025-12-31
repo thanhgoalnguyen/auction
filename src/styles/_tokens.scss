@@ -1,0 +1,16 @@
+@use './theming/variables' as vars;
+
+@forward './theming/variables';
+
+$color-surface:        #ffffff;
+$color-background:     #f5f6fa;
+$color-border:         #e4e7ee;
+$color-shadow:         rgba(15, 23, 42, 0.12);
+$color-text-primary:   #0f172a;
+$color-text-secondary: #64748b;
+$color-primary:        #ff5c5c;
+$color-primary-strong: #EED20FFF;
+$color-primary-soft:   rgba(255, 92, 92, 0.12);
+$color-success:        #16a34a;
+$color-warning:        #f97316;
+$color-muted:          #f1f5f9;
