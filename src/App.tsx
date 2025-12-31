@@ -1,79 +1,46 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-}                            from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { dummyUsers, dummySessionEntity } from './data/mock-data'
+import Layout from "./layouts/Layout.tsx";
 
-import Layout from './layouts/Layout.tsx'
+import TopNoLogin from "@/pages/layout/TopNoLogin.tsx";
+import TopLogin from "./pages/layout/TopLogin.tsx";
+import LikeList from "./pages/layout/LikeList.tsx";
+import SearchTop from "./pages/layout/SearchTop.tsx";
+import UserRegistration from "./pages/layout/UserRegistration";
+import Login from "./pages/layout/Login.tsx";
+import RegistrationEmailSent from "./pages/layout/RegistrationEmailSent.tsx";
+import CategoryList from "./pages/layout/CategoryList.tsx";
+import SearchResult from "./pages/layout/SearchResult.tsx";
+import MyPage from "./pages/layout/MyPage.tsx";
 
-import TopNoLogin from '@/pages/layout/TopNoLogin.tsx';
-import TopLogin from './pages/layout/TopLogin.tsx';
-import LikeList from './pages/layout/LikeList.tsx';
-import SearchTop from './pages/layout/SearchTop.tsx';
-import UserRegistration from './pages/layout/UserRegistration';
-import Login from './pages/layout/Login.tsx';
-import RegistrationEmailSent from './pages/layout/RegistrationEmailSent.tsx';
-import CategoryList from './pages/layout/CategoryList.tsx';
-import SearchResult from './pages/layout/SearchResult.tsx';
-import MyPage from './pages/layout/MyPage.tsx';
-
-import { ROUTE_PATH } from './data/demo.ts'
+import { ROUTE_PATH } from "./data/demo.ts";
 
 function App() {
-  // dummy data for "success" page.
-  const organizer = dummyUsers.get(1)
-  const sessionEntity = dummySessionEntity
-
-//   document.addEventListener('contextmenu', event => event.preventDefault())
-  return (
-    <Router>
-		<Routes>
-			<Route element = {<Layout/>}>
-				<Route
-					path={ROUTE_PATH?.TOP_NO_LOGIN}
-					element = {<TopNoLogin/>}
-				/>
-				<Route
-					path={ROUTE_PATH?.TOP_LOGIN}
-					element = {<TopLogin/>}
-				/>
-				<Route
-					path={ROUTE_PATH?.LIKE_LIST}
-					element = {<LikeList/>}
-				/>
-				<Route
-					path={ROUTE_PATH?.SEARCH_TOP}
-					element = {<SearchTop/>}
-				/>
-				<Route
-					path={ROUTE_PATH?.USER_REGISTRATION}
-					element = {<UserRegistration/>}
-				/>
-				<Route
-					path={ROUTE_PATH?.LOGIN}
-					element = {<Login/>}
-				/>
-				<Route
-					path={ROUTE_PATH?.REGISTRATION_EMAIL_SENT}
-					element = {<RegistrationEmailSent/>}
-				/>
-				<Route
-					path={ROUTE_PATH?.CATEGORY_LIST}
-					element = {<CategoryList/>}
-				/>
-				<Route
-					path={ROUTE_PATH?.SEARCH_RESULT}
-					element = {<SearchResult/>}
-				/>
-				<Route
-					path={ROUTE_PATH?.MY_PAGE}
-					element = {<MyPage/>}
-				/>
-			</Route>
-		</Routes>
-      {/* <Routes>
+	// dummy data for "success" page.
+	//   document.addEventListener('contextmenu', event => event.preventDefault())
+	return (
+		<Router>
+			<Routes>
+				<Route element={<Layout />}>
+					<Route path={ROUTE_PATH?.TOP_NO_LOGIN} element={<TopNoLogin />} />
+					<Route path={ROUTE_PATH?.TOP_LOGIN} element={<TopLogin />} />
+					<Route path={ROUTE_PATH?.LIKE_LIST} element={<LikeList />} />
+					<Route path={ROUTE_PATH?.SEARCH_TOP} element={<SearchTop />} />
+					<Route
+						path={ROUTE_PATH?.USER_REGISTRATION}
+						element={<UserRegistration />}
+					/>
+					<Route path={ROUTE_PATH?.LOGIN} element={<Login />} />
+					<Route
+						path={ROUTE_PATH?.REGISTRATION_EMAIL_SENT}
+						element={<RegistrationEmailSent />}
+					/>
+					<Route path={ROUTE_PATH?.CATEGORY_LIST} element={<CategoryList />} />
+					<Route path={ROUTE_PATH?.SEARCH_RESULT} element={<SearchResult />} />
+					<Route path={ROUTE_PATH?.MY_PAGE} element={<MyPage />} />
+				</Route>
+			</Routes>
+			{/* <Routes>
         <Route
           path = "/"
           element = {<Splash/>}
@@ -180,8 +147,8 @@ function App() {
           />}
         />
       </Routes> */}
-    </Router>
-  )
+		</Router>
+	);
 }
 
-export default App
+export default App;
