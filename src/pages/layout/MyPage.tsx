@@ -1,7 +1,11 @@
+import { useState } from "react";
+
 import { Link } from "react-router-dom";
 
 import PageHeader from "@/components/layout/PageHeader";
-import PrivacyTerms from "@/components/ui/PrivacyTerms";
+import PolicyTerm from "@/components/ui/PolicyTerm";
+import MyPageNavigation from "@/components/ui/MyPageNavigation";
+import LogOutModal from "@/components/ui/LogOutModal";
 
 import avatar from "@/assets/icon/myPage/avatar.svg";
 import star from "@/assets/icon/myPage/star.svg";
@@ -9,6 +13,8 @@ import blonze from "@/assets/icon/myPage/blonze.svg"
 import arrowRight from "@/assets/icon/searchTop/arrow-right.svg";
 
 export default function MyPage() {
+	const [open, setOpen] = useState(false);
+
 	const listProgress = [
 		{
 			label: "星５",
@@ -35,7 +41,53 @@ export default function MyPage() {
 			value: 0,
 			percent: 0
 		},
-	]
+	];
+
+	const productManagementList = [
+		{
+			label: "いいね！一覧",
+			link: "/",
+		},
+		{
+			label: "閲覧履歴",
+			link: "/",
+		},
+		{
+			label: "フォローリスト",
+			link: "/",
+		},
+		{
+			label: "出品した商品",
+			link: "/",
+		},
+		{
+			label: "落札した商品",
+			link: "/",
+		},
+	];
+
+	const settingList = [
+		{
+			label: "個人情報設定",
+			link: "/",
+		},
+	];
+
+	const policyTermsList = [
+		{
+			label: "利用規約等",
+			link: "/",
+		},
+		{
+			label: "プライバシーポリシー等",
+			link: "/",
+		},
+	];
+
+	const handleOpen = () => {
+		setOpen(!open);
+	};
+ 
 	return (
 		<div className="my-page flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="マイページ"/>
@@ -99,14 +151,34 @@ export default function MyPage() {
 								className='w-[5px] h-[8px]'
 							/>
 						</Link>
-						
 					</div>
 				</div>
-				<div className="w-full px-3">
-
+				<div className="flex flex-col w-full px-3">
+					<MyPageNavigation 
+						title="商品管理" 
+						list={productManagementList} 
+						className="mb-[45px]"
+					/>
+					<MyPageNavigation 
+						title="設定" 
+						list={settingList} 
+						className="mb-6"
+					/>
+					<MyPageNavigation 
+						title="規約・ポリシー" 
+						list={policyTermsList} 
+						className="mb-[35px]"
+					/>
+					<button
+						onClick={handleOpen}
+						className="flex items-center py-4 pl-[2px] border-b border-t border-neutral-300"
+					>
+						<p className="text-[11px] leading-[13px] text-neutral-600">ログアウト</p>
+					</button>
 				</div>
 			</div>
-			<PrivacyTerms showMore/>
+			<PolicyTerm showMore/>
+			<LogOutModal open={open} handleOpen={handleOpen}/>
 		</div>
 	);
 }

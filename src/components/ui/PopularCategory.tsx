@@ -79,7 +79,7 @@ export default function PopularCategory() {
 										alt="category" 
 										className="w-full aspect-square object-cover"
 									/>
-									<p className="text-[8px] leading-[10px] text-dark-200 text-center">{item?.name}</p>
+									<p className="text-[8px] leading-[10px] text-neutral-1200 text-center">{item?.name}</p>
 								</Link>
 							</SwiperSlide>
 						)

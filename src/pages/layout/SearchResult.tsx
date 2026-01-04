@@ -1,16 +1,18 @@
 import PageHeader from "@/components/layout/PageHeader";
-import PrivacyTerms from "@/components/ui/PrivacyTerms";
+import PolicyTerm from "@/components/ui/PolicyTerm";
 import StatusDropdown from "@/components/ui/StatusDropdown";
 import SortDropdown from "@/components/ui/SortDropdown";
 import Product from "@/components/ui/Product";
 
 import filter from "@/assets/icon/searchResult/filter.svg";
-import product10 from "@/assets/img/10.png";
-import product11 from "@/assets/img/11.png";
-import product12 from "@/assets/img/12.png";
-import product13 from "@/assets/img/13.png";
-import product14 from "@/assets/img/14.png";
-import product15 from "@/assets/img/15.png";
+import product22 from "@/assets/img/22.png";
+import product23 from "@/assets/img/23.png";
+import product24 from "@/assets/img/24.png";
+import product25 from "@/assets/img/25.png";
+import product26 from "@/assets/img/26.png";
+import product27 from "@/assets/img/27.png";
+import product28 from "@/assets/img/28.png";
+import product29 from "@/assets/img/29.png";
 import shop16 from "@/assets/img/16.png";
 import shop17 from "@/assets/img/17.png";
 import shop18 from "@/assets/img/18.png";
@@ -21,50 +23,58 @@ import shop21 from "@/assets/img/21.png";
 export default function SearchResult() {
 	const listRecentViewProduct = [
 		{
-			imgProduct: product10,
-			money: "1,200",
-			nameProduct: "balenciaga ストンパーブーツ",
-			imgShop: shop16,
+			imgProduct: product22,
+			money: "11,200",
+			nameProduct: "balenciaga ストンパージャケット",
 			nameShop: "simgffj",
 			link: "/a"
 		},
 		{
-			imgProduct: product11,
+			imgProduct: product23,
 			money: "9,500",
 			nameProduct: "Noir kei ninomiya ラッフルスカート",
-			imgShop: shop17,
 			nameShop: "ponta",
 			link: "/a"
 		},
 		{
-			imgProduct: product12,
+			imgProduct: product24,
 			money: "6,000",
 			nameProduct: "DRIES VAN NOTEN スタッズ",
-			imgShop: shop18,
 			nameShop: "佐藤美加",
 			link: "/a"
 		},
 		{
-			imgProduct: product13,
-			money: "2,000",
+			imgProduct: product25,
+			money: "12,000",
 			nameProduct: "W&LT / Psychedelic Knit Vest",
-			imgShop: shop19,
 			nameShop: "meangirls",
 			link: "/a"
 		},
 		{
-			imgProduct: product14,
+			imgProduct: product26,
 			money: "9,200",
 			nameProduct: "アーティザナル トロンプルイユ",
-			imgShop: shop20,
 			nameShop: "ReviResonia",
 			link: "/a"
 		},
 		{
-			imgProduct: product15,
+			imgProduct: product27,
 			money: "38,000",
 			nameProduct: "Archive Denim Half Coat",
-			imgShop: shop21,
+			nameShop: "ichigo",
+			link: "/a"
+		},
+		{
+			imgProduct: product28,
+			money: "1,200",
+			nameProduct: "balenciaga ストンパーブーツ",
+			nameShop: "ichigo",
+			link: "/a"
+		},
+		{
+			imgProduct: product29,
+			money: "9,500",
+			nameProduct: "Noir kei ninomiya ラッフルスカート",
 			nameShop: "ichigo",
 			link: "/a"
 		},
@@ -96,7 +106,7 @@ export default function SearchResult() {
 					}
 				</div>
 			</div>
-			<PrivacyTerms/>
+			<PolicyTerm/>
 		</div>
 	);
 }

@@ -3,7 +3,7 @@ import LikedProduct from "@/components/ui/LikedProduct";
 import PopularCategory from "@/components/ui/PopularCategory";
 import RecentProduct from "@/components/ui/RecentProduct";
 import RecommendProduct from "@/components/ui/RecommendProduct";
-import PrivacyTerms from "@/components/ui/PrivacyTerms";
+import PolicyTerm from "@/components/ui/PolicyTerm";
 
 export default function TopLogin() {
 	return (
@@ -15,7 +15,7 @@ export default function TopLogin() {
 				<RecentProduct/>
 				<RecommendProduct/>
 			</div>
-			<PrivacyTerms/>
+			<PolicyTerm/>
 		</div>
 	);
 }

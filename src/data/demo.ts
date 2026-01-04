@@ -301,11 +301,16 @@ export const ROUTE_PATH = {
 	REGISTRATION_EMAIL_SENT: "/registration-email-sent",
 	CATEGORY_LIST: "/category-list",
 	SEARCH_RESULT: "/search-result",
-	MY_PAGE: "/my-page"
+	MY_PAGE: "/my-page",
+	USER_PROFILE: "/user-profile",
+	OTHER_PROFILE: "/other-profile",
+	ITEM_DETAIL: "/item-detail",
+	ROOM_DETAIL: "/room-detail",
 };
 
 export const SUB_FOOTER_ROUTE = [
 	ROUTE_PATH?.USER_REGISTRATION,
 	ROUTE_PATH?.LOGIN,
 	ROUTE_PATH?.REGISTRATION_EMAIL_SENT,
+	ROUTE_PATH?.ROOM_DETAIL
 ]

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 
-import arrowDown from "@/assets/icon/privacyTerms/arrow-down.svg";
+import arrowDown from "@/assets/icon/policyTerm/arrow-down.svg";
 import checkbox from "@/assets/icon/searchResult/checkbox.svg";
 import checkboxActive from "@/assets/icon/searchResult/checkbox-active.svg";
 
@@ -8,6 +9,8 @@ export default function StatusDropdown() {
 	const [open, setOpen] = useState(false);
 	const [title, setTitle] = useState("全ての商品");
 	const [value, setValue] = useState(1);
+
+	const bodyContainerRef = useOutletContext<React.RefObject<HTMLDivElement>>();
 
 	const listStatus = [
 		{
@@ -34,6 +37,14 @@ export default function StatusDropdown() {
 		handleOpen();
 	}
 
+	useEffect(() => {
+		if (open) {
+			bodyContainerRef.current.classList.add('overflow-hidden');
+		} else {
+			bodyContainerRef.current.classList.remove('overflow-hidden');
+		}
+	}, [open])
+
   	return (
 		<div className="relative">
 			<button onClick={handleOpen} className="flex items-center gap-[19px]" id="label-for-editor">
@@ -45,7 +56,7 @@ export default function StatusDropdown() {
 				/>
 			</button>
 			{ open && 
-				<div className="absolute top-full left-0 z-[1] translate-y-[5px] translate-x-[-18px] flex flex-col justify-center gap-[9px] w-[129px] h-max p-2 bg-dark-300">
+				<div className="absolute top-full left-0 z-[2] translate-y-[5px] translate-x-[-18px] flex flex-col justify-center gap-[9px] w-[129px] h-max p-2 bg-dark-300">
 					{listStatus?.map(item =>
 						<button 
 							className="flex justify-between items-center" 
@@ -62,8 +73,8 @@ export default function StatusDropdown() {
 					)}
 				</div>
 			}
-			{ open && 
-				<div onClick={handleOpen} className="fixed top-[55px] bottom-[72px] left-0 w-full h-[calc(100%-127px)] bg-neutral-900 bg-opacity-40"></div>
+			{open && 
+				<div onClick={handleOpen} className="fixed top-[55px] bottom-[72px] z-[1] left-0 w-full h-[calc(100%-127px)] bg-neutral-900 bg-opacity-40"></div>
 			}
 		</div>
 	);

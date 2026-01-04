@@ -6,7 +6,7 @@ type ProductData = {
 	nameProduct: string
 	money: string
 	nameShop: string
-	imgShop: string
+	imgShop?: string
 }
 
 type ProductProps = {
@@ -18,7 +18,7 @@ export default function Product({data, showShop} : ProductProps) {
 	return (
 		<Link 
 			to={data?.link} 
-			className="flex flex-col gap-[2px]"
+			className="product-card flex flex-col gap-[2px]"
 		>
 			<img 
 				src={data?.imgProduct} 

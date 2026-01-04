@@ -1,0 +1,44 @@
+@use '../../styles/tokens' as *;
+
+.tabbar {
+  width:                 100%;
+  position:              fixed;
+  bottom:                0;
+  left:                  0;
+  right:                 0;
+  display:               grid;
+  grid-template-columns: repeat(2, 1fr);
+  z-index:               999;
+  margin:                0 auto;
+  background:            white;
+}
+
+@media (min-width: 1024px) {
+  .tabbar {
+    width: $mobile-content-width;
+  }
+}
+
+.tab {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  font-size:       $font-size-small;
+  font-weight:     600;
+  border-radius:   $border-radius-medium;
+  transition:      color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  text-decoration: none !important;
+}
+
+.active {
+  background: rgba(220, 197, 197, 0.18);
+}
+
+.icon {
+  font-size: 26px;
+}
+
+.label {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}

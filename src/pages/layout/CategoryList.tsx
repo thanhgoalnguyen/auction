@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 
 import PageHeader from "@/components/layout/PageHeader";
-import PrivacyTerms from "@/components/ui/PrivacyTerms";
+import PolicyTerm from "@/components/ui/PolicyTerm";
 
 import arrowRight from "@/assets/icon/searchTop/arrow-right.svg";
 
@@ -220,7 +220,7 @@ export default function CategoryList() {
                 	})
 				}
 			</div>
-			<PrivacyTerms/>
+			<PolicyTerm/>
 		</div>
 	);
 }

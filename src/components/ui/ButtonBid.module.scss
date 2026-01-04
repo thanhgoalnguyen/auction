@@ -1,0 +1,97 @@
+@use '../../styles/tokens' as *;
+
+.buttonWrapper{
+  border:          $border-weight-bold solid $text-color-error;
+  border-radius:   50px;
+  width:           fit-content;
+  padding:         $border-weight-bold $space-size-large $border-weight-bold $border-weight-bold;
+  color:           white;
+  font-size:       $font-size-nano;
+  position:        relative;
+  user-select:     none;
+  touch-action:    none;
+  height:          45px;
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+
+  .button{
+    background:    $text-color-error;
+    border-radius: 50px;
+    outline:       none;
+    padding:       $border-weight-bold;
+    color:         white;
+    font-weight:   $font-weight-medium;
+    display:       flex;
+    gap:           0 $space-size-small;
+    height:        100%;
+    will-change:   transform;
+    transition:    transform 0ms linear;
+    border:        none;
+    align-items:   center;
+
+    .buttonLabel{
+      display:         flex;
+      flex-direction:  column;
+      justify-content: space-around;
+      width:           100%;
+      padding-left:    $space-size-base;
+
+      .buttonText{
+        display:         flex;
+        justify-content: space-between;
+        width:           100%;
+        gap:             0 $space-size-nano;
+        align-items:     baseline;
+        font-size:       $font-size-nano;
+
+        .beatPrice{
+          position:     relative;
+          padding-left: 8px;
+
+          &:before{
+            content:   '¥';
+            position:  absolute;
+            left:      0;
+            font-size: $font-size-nano;
+          }
+        }
+      }
+    }
+
+    .buttonIcon{
+      position: relative;
+
+      .rightIcon{
+        pointer-events: none;
+      }
+
+      &:before{
+        content:  '..';
+        position: absolute;
+        width:    2px;
+        height:   2px;
+        left:     -6px;
+        top:      -1px;
+      }
+    }
+
+    .price, .icon{
+      font-weight: $font-weight-black;
+      font-size:   $font-size-large;
+      position:    relative;
+    }
+
+    .price{
+      padding-left: 10px;
+
+      &:before{
+        content:   '¥';
+        position:  absolute;
+        left:      0;
+        bottom:    $border-weight-bold;
+        font-size: $font-size-nano;
+      }
+    }
+  }
+}

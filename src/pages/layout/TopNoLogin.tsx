@@ -2,7 +2,7 @@ import PageHeader from "@/components/layout/PageHeader";
 import PopularCategory from "@/components/ui/PopularCategory";
 import RecentProduct from "@/components/ui/RecentProduct";
 import RecommendProduct from "@/components/ui/RecommendProduct";
-import PrivacyTerms from "@/components/ui/PrivacyTerms";
+import PolicyTerm from "@/components/ui/PolicyTerm";
 
 export default function TopNoLogin() {
 	return (
@@ -13,7 +13,7 @@ export default function TopNoLogin() {
 				<RecentProduct/>
 				<RecommendProduct/>
 			</div>
-			<PrivacyTerms/>
+			<PolicyTerm/>
 		</div>
 	);
 }
