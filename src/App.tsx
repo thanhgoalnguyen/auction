@@ -12,11 +12,16 @@ import RegistrationEmailSent from "./pages/layout/RegistrationEmailSent.tsx";
 import CategoryList from "./pages/layout/CategoryList.tsx";
 import SearchResult from "./pages/layout/SearchResult.tsx";
 import MyPage from "./pages/layout/MyPage.tsx";
+import UserProfile from "./pages/layout/UserProfile.tsx";
+import OtherProfile from "./pages/layout/OtherProfile.tsx";
+import ItemDetail from "./pages/layout/ItemDetail.tsx";
+import RoomDetail from "./pages/layout/RoomDetail.tsx";
 
 import { ROUTE_PATH } from "./data/demo.ts";
 
 function App() {
-	// dummy data for "success" page.
+	//
+
 	//   document.addEventListener('contextmenu', event => event.preventDefault())
 	return (
 		<Router>
@@ -38,6 +43,10 @@ function App() {
 					<Route path={ROUTE_PATH?.CATEGORY_LIST} element={<CategoryList />} />
 					<Route path={ROUTE_PATH?.SEARCH_RESULT} element={<SearchResult />} />
 					<Route path={ROUTE_PATH?.MY_PAGE} element={<MyPage />} />
+					<Route path={ROUTE_PATH?.USER_PROFILE} element={<UserProfile />} />
+					<Route path={ROUTE_PATH?.OTHER_PROFILE} element={<OtherProfile />} />
+					<Route path={ROUTE_PATH?.ITEM_DETAIL} element={<ItemDetail />} />
+					<Route path={ROUTE_PATH?.ROOM_DETAIL} element={<RoomDetail />} />
 				</Route>
 			</Routes>
 			{/* <Routes>
