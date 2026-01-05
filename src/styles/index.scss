@@ -56,7 +56,6 @@ body {
 	min-height: 100vh;
 	min-height: -webkit-fill-available;
 	-webkit-text-size-adjust: 100%;
-	overflow: hidden;
 }
 
 #root {
@@ -64,7 +63,6 @@ body {
 	display: flex;
 	justify-content: center;
 	max-height: 100vh;
-	overflow: hidden;
 	margin: 0 auto;
 }
 
