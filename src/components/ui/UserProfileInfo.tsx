@@ -44,22 +44,22 @@ export default function UserProfileInfo({isUserProfile, className} : CategoryIte
 	}
 
 	return (
-		<div className={`grid grid-cols-[70fr_276fr] gap-[14px] px-[15px] ${className}`}>
+		<div className={`grid grid-cols-[70fr_276fr] items-center gap-[14px] ${className}`}>
 			<img 
 				src={data?.avatar} 
 				alt="avatar"
 				className='w-full aspect-square rounded-full'
 			/>
-			<div className="flex flex-col pt-[5px]">
-				<p className="mb-[11px] text-[15px] leading-[18px] text-neutral-500">{data?.name}</p>
-				<div className="flex w-full mb-1">
-					<div className="flex items-center gap-[5px] mr-7">
+			<div className="flex flex-col gap-2">
+				<p className="text-[15px] leading-[18px]">{data?.name}</p>
+				<div className="flex w-full">
+					<div className="flex items-center gap-1 mr-7">
 						<img 
 							src={star} 
 							alt="star"
 							className='w-4 h-[15px]'
 						/>
-						<p className="w-[18px] text-[12px] leading-[15px] text-neutral-500 text-right">{data?.star}</p>
+						<p className="w-[18px] text-[12px] leading-[15px] text-right">{data?.star}</p>
 					</div>
 					<div className="flex items-center gap-2">
 						<img 
@@ -67,7 +67,7 @@ export default function UserProfileInfo({isUserProfile, className} : CategoryIte
 							alt="blonze"
 							className='w-[14px] h-4'
 						/>
-						<p className="text-[12px] leading-[15px] text-neutral-500">Blonze</p>
+						<p className="text-[12px] leading-[15px]">Blonze</p>
 					</div>
 					{isUserProfile ? (
 						<ButtonContainer
@@ -87,17 +87,17 @@ export default function UserProfileInfo({isUserProfile, className} : CategoryIte
 						</ButtonContainer>
 					)}
 				</div>
-				<div className="flex items-center">
-					<div className="flex items-center gap-3 mr-[21px]">
-						<p className="text-[10px] leading-[12px] text-neutral-500">{data?.quantity}</p>
+				<div className="flex items-center gap-3">
+					<div className="flex items-center gap-3">
+						<p className="text-[10px] leading-[12px]">{data?.quantity}</p>
 						<p className="text-[6px] leading-[7px] text-neutral-700">出品数</p>
 					</div>
-					<div className="flex items-center gap-1 mr-[17px]">
-						<p className="text-[10px] leading-[12px] text-neutral-500">{data?.follower}</p>
+					<div className="flex items-center gap-3">
+						<p className="text-[10px] leading-[12px]">{data?.follower}</p>
 						<p className="text-[6px] leading-[7px] text-neutral-700">フォロワー</p>
 					</div>
-						<div className="flex items-center gap-[5px]">
-						<p className="text-[10px] leading-[12px] text-neutral-500">{data?.follow}</p>
+						<div className="flex items-center gap-3">
+						<p className="text-[10px] leading-[12px]">{data?.follow}</p>
 						<p className="text-[6px] leading-[7px] text-neutral-700">フォロー</p>
 					</div>
 				</div>

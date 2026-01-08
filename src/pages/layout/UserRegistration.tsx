@@ -14,17 +14,17 @@ export default function UserRegistration() {
   	return (
 		<div className="user-registration flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="会員登録"/>
-			<div className="w-full max-w-[768px] pt-[27px] pb-[58px] px-[9px]">
-				<p className="text-[10px] leading-[12px] mb-[22px]">メールアドレスとパスワードを入力してください</p>
+			<div className="container">
+				<p className="text-[10px] leading-[12px] mb-6">メールアドレスとパスワードを入力してください</p>
 				<Input
-					className="mb-[18px]"
+					className="mb-4"
 					label="ニックネーム"
 					placeholder="例：future.vintage@example.com"
 				>
 					<p>※メールアドレスは後から変更できます</p>
 				</Input>
 				<Input
-					className="mb-[25px]"
+					className="mb-6"
 					label="パスワード"
 				>
 				</Input>

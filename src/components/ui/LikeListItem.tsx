@@ -3,17 +3,17 @@ import trash from "@/assets/icon/likeList/trash.svg";
 export default function LikeListItem({data, isEdit}) {
 	return (
 		<div 
-			className="grid grid-cols-[84fr_241fr] gap-[18px] items-center pb-[7px] pl-[6px] pr-[7px] border-b border-neutral-300"
+			className="grid grid-cols-[84fr_241fr] gap-4 items-center pb-[7px] px-2 border-b border-neutral-300"
 		>
 			<img
 				src={data?.img}
 				alt="product"
 				className="aspect-square"
 			/>
-			<div className="flex flex-col gap-[17px]">
+			<div className="flex flex-col gap-4">
 				<p className="text-[13px] leading-[16px]">{data?.name}</p>
 				<div className="flex justify-between items-center gap-1">
-					<div className="flex items-center gap-[27px] text-[10px] leading-[12px]">
+					<div className="flex items-center gap-1 text-[10px] leading-[12px]">
 						<p>最低落札価格：</p>
 						<p>¥{data?.money}</p>
 					</div>

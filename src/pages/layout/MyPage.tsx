@@ -85,14 +85,15 @@ export default function MyPage() {
 	];
 
 	const handleOpen = () => {
+		console.log(44);
 		setOpen(!open);
 	};
  
 	return (
 		<div className="my-page flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="マイページ"/>
-			<div className="flex flex-col gap-7 w-full max-w-[768px] pt-[23px] pb-[58px] text-[11px] leading-[13px]">
-				<div className="grid grid-cols-[80fr_196fr] gap-[38px] px-10">
+			<div className="container flex flex-col gap-7 text-[11px] leading-[13px]">
+				<div className="flex justify-center items-center gap-9 px-5">
 					<div className="flex flex-col items-center gap-2">
 						<img 
 							src={avatar} 
@@ -101,24 +102,28 @@ export default function MyPage() {
 						/>
 						<p className="text-[15px] leading-[18px] text-neutral-600">Y.Sara1985</p>
 					</div>
-					<div className="flex items-center gap-[18px]">
-						<div className="grow pt-[3px]">
-							<div className="flex items-center w-full mb-2">
-								<img 
-									src={star} 
-									alt="star"
-									className='w-4 h-[15px] mr-[5px]'
-								/>
-								<p className="text-[12px] leading-[15px] mr-[9px]">4.2</p>
-								<p className="text-[6px] leading-[7px] mr-[22px]">/ 38件の評価</p>
-								<img 
-									src={blonze} 
-									alt="blonze"
-									className='w-[14px] h-4 mr-2'
-								/>
-								<p className="text-[12px] leading-[15px]">Blonze</p>
+					<div className="flex items-center gap-4">
+						<div className="flex flex-col gap-2">
+							<div className="flex justify-between items-center gap-3 w-full">
+								<div className="flex items-center gap-1">
+									<img 
+										src={star} 
+										alt="star"
+										className='w-4 h-[15px]'
+									/>
+									<p className="text-[12px] leading-[15px]">4.2</p>
+								</div>
+								<p className="text-[6px] leading-[7px]">/ 38件の評価</p>
+								<div className="flex items-center gap-2">
+									<img 
+										src={blonze} 
+										alt="blonze"
+										className='w-[14px] h-4'
+									/>
+									<p className="text-[12px] leading-[15px]">Blonze</p>
+								</div>
 							</div>
-							<div className="flex flex-col gap-1 mb-[10px]">
+							<div className="flex flex-col gap-1">
 								{listProgress?.map((item, index) => 
 									<div className="flex items-center gap-1" key={index}>
 										<p className="w-[14px] text-[7px] leading-[8px] text-neutral-600 text-left">{item?.label}</p>
@@ -129,16 +134,16 @@ export default function MyPage() {
 									</div>
 								)}
 							</div>
-							<div className="flex justify-between items-center w-full pl-[2px] pr-1">
-								<div className="flex items-center gap-[11px]">
+							<div className="flex justify-between items-center w-full">
+								<div className="flex items-center gap-3">
 									<p className="text-[10px] leading-[12px] text-neutral-600">６</p>
 									<p className="text-[6px] leading-[7px] text-neutral-700">出品数</p>
 								</div>
-								<div className="flex items-center gap-[11px]">
+								<div className="flex items-center gap-3">
 									<p className="text-[10px] leading-[12px] text-neutral-600">16</p>
 									<p className="text-[6px] leading-[7px] text-neutral-700">フォロワー</p>
 								</div>
-								<div className="flex items-center gap-[11px]">
+								<div className="flex items-center gap-3">
 									<p className="text-[10px] leading-[12px] text-neutral-600">4</p>
 									<p className="text-[6px] leading-[7px] text-neutral-700">フォロー</p>
 								</div>
@@ -153,25 +158,22 @@ export default function MyPage() {
 						</Link>
 					</div>
 				</div>
-				<div className="flex flex-col w-full px-3">
+				<div className="flex flex-col gap-9 w-full">
 					<MyPageNavigation 
 						title="商品管理" 
 						list={productManagementList} 
-						className="mb-[45px]"
 					/>
 					<MyPageNavigation 
 						title="設定" 
 						list={settingList} 
-						className="mb-6"
 					/>
 					<MyPageNavigation 
 						title="規約・ポリシー" 
 						list={policyTermsList} 
-						className="mb-[35px]"
 					/>
 					<button
 						onClick={handleOpen}
-						className="flex items-center py-4 pl-[2px] border-b border-t border-neutral-300"
+						className="flex items-center w-full py-4 pl-[2px] border-b border-t border-neutral-300"
 					>
 						<p className="text-[11px] leading-[13px] text-neutral-600">ログアウト</p>
 					</button>

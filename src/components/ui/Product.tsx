@@ -23,18 +23,18 @@ export default function Product({data, showShop} : ProductProps) {
 			<img 
 				src={data?.imgProduct} 
 				alt="product" 
-				className="w-full aspect-square"
+				className="w-full aspect-square rounded-[2px]"
 			/>
 			<div className="grid grid-cols-[115fr_70fr] gap-1">
-				<div className="flex flex-col gap-[3px]">
+				<div className="flex flex-col gap-1">
 					<p className="text-[7px] leading-[8px] line-clamp-1">{data?.nameProduct}</p>
-					<div className="flex items-center gap-[23px] text-[6px] leading-[7px]">
+					<div className="flex items-center gap-6 text-[6px] leading-[7px]">
 						<p>最低落札価格：</p>
 						<p className="text-red-100">¥{data?.money}</p>
 					</div>
 				</div>
 				{showShop &&
-					<div className="flex justify-end items-end gap-[6px]">
+					<div className="flex justify-end items-end gap-1">
 						<p className="text-[6px] leading-[7px] truncate">{data?.nameShop}</p>
 						<img 
 							src={data?.imgShop} 

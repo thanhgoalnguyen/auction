@@ -30,7 +30,7 @@ export default function SliderProduct({isRoom, data, className}: SliderProductPr
 
 	return (
 		<div className={`flex flex-col ${className}`}>
-			<div className="w-full px-[68px] mb-6">
+			<div className="w-full px-[58px] mb-6">
 				<div 
 					className="relative
 						[&_.swiper-pagination]:static [&_.swiper-pagination]:flex [&_.swiper-pagination]:justify-center [&_.swiper-pagination]:gap-4 [&_.swiper-pagination]:h-1 [&_.swiper-pagination]:mt-[17px]
@@ -76,20 +76,20 @@ export default function SliderProduct({isRoom, data, className}: SliderProductPr
 					</button>
 				</div>
 			</div>
-			<div className="flex flex-col gap-[7px] w-full px-[39px]">
+			<div className="flex flex-col gap-2 w-full px-7">
 				<p className="text-[16px] leading-[19px] text-neutral-600">{data?.name}</p>
 				{
 					isRoom ? (
-						<div className="flex items-center gap-[31px]">
+						<div className="flex items-center gap-8">
 							<p className="text-[8px] leading-[10px] text-neutral-600">出品点数：</p>
 							<p className="text-[14px] leading-[17px] text-red-100">{data?.entry}点</p>
 						</div>
 					) : (
 					<div className="flex items-center">
-						<p className="mr-[13px] text-[8px] leading-[10px] text-neutral-600">最低落札価格：</p>
-						<p className="mr-[11px] text-[14px] leading-[17px] text-red-100">¥{data?.bid}</p>
+						<p className="mr-2 text-[8px] leading-[10px] text-neutral-600">最低落札価格：</p>
+						<p className="mr-2 text-[14px] leading-[17px] text-red-100">¥{data?.bid}</p>
 						<p className="text-[7px] leading-[8px] text-neutral-600">（税別）送料別途</p>
-						<div className="flex items-center gap-[5px] ml-auto">
+						<div className="flex items-center gap-1 ml-auto">
 							<img 
 								src={heart} 
 								alt="heart"
@@ -103,31 +103,31 @@ export default function SliderProduct({isRoom, data, className}: SliderProductPr
 			</div>
 			{
 				isRoom ? (
-					<div className='w-full px-[17px] mt-[47px]'>
-						<div className='pb-[5px] pl-[11px] mb-8 border-b border-neutral-300'>
+					<div className='w-full mt-12'>
+						<div className='pb-1 pl-2 mb-8 border-b border-neutral-300'>
 							<p className='text-[9px] leading-[11px] text-neutral-700'>オークションルームの説明</p>
 						</div>
-						<div className='w-full px-[13px] text-[11px] leading-[13px] text-neutral text-neutral-700'>
-							<div className="flex flex-col gap-[5px] mb-[21px]">
+						<div className='w-full px-3 text-[11px] leading-[13px] text-neutral text-neutral-700'>
+							<div className="flex flex-col gap-1 mb-5">
 								<p>クリストファー・ネメス（CHRISTOPHER NEMETH）の立体裁断テーラー</p>
 								<p>ドジャケットの他、3点出品しています。</p>
 							</div>
-							<div className="flex flex-col gap-[5px] mb-[21px]">
+							<div className="flex flex-col gap-1 mb-5">
 								<p>メイン商品のジャケットはジャケット背面に大きく書かれたサインがあり、</p>
 								<p>プリントではなくネメス氏本人が直筆書いたもの。前オーナーがネメス氏が</p>
 								<p>来日した原宿本店で購入した際ネメス氏は惜しくも2010年に亡くなられて</p>
 								<p>おりますので、もう2度と手に入ることのないスペシャルなアイテムです。</p>
 							</div>
-							<div className="flex flex-col gap-[5px] mb-[21px]">
+							<div className="flex flex-col gap-1 mb-5">
 								<p>その他のアイテムも大変貴重な商品を出品していますのでオークション参加</p>
 								<p>をご検討ください。</p>
 							</div>
-							<div className="flex flex-col gap-[5px] mb-[21px]">
+							<div className="flex flex-col gap-1 mb-5">
 								<p>オークション開始価格</p>
 								<p>400円スタート</p>
 								<p>16,000円スタート</p>
 								<p>22,000円スタート</p>
-								<div className='flex items-center gap-5 mb-[22px]'>
+								<div className='flex items-center gap-5 mb-6'>
 									<p>Psychedelic Knit Vest　：　</p>
 									<p>30,000円スタート</p>
 								</div>
@@ -145,13 +145,13 @@ export default function SliderProduct({isRoom, data, className}: SliderProductPr
 					</div>
 				) : (
 					<>
-						<div className='flex flex-col gap-[21px] w-full px-7 mt-[34px] mb-[39px] text-[9px] leading-[11px] text-neutral-600'>
-							<div className='flex flex-col gap-[5px]'>
+						<div className='flex flex-col gap-5 w-full px-[18px] mt-9 mb-10 text-[9px] leading-[11px] text-neutral-600'>
+							<div className='flex flex-col gap-1'>
 								<p>24awで同じ柄のタートルネックが非常に注目されていました。</p>
 								<p>定価は70000前半ほどだったかと思います。</p>
 							</div>
 							<p>数回使用も趣味が変わったため出品いたします。</p>
-							<div className="flex flex-col gap-[5px]">
+							<div className="flex flex-col gap-1">
 								<p>サイズ：M</p>
 								<p>着丈：63cm</p>
 								<p>肩幅：66cm</p>
@@ -168,8 +168,8 @@ export default function SliderProduct({isRoom, data, className}: SliderProductPr
 								</div>
 							</div>
 						</div>
-						<div className='w-full px-[17px]'>
-							<div className='pb-[5px] pl-[11px] mb-3 border-b border-neutral-300'>
+						<div className='w-full'>
+							<div className='pb-1 px-3 mb-2 border-b border-neutral-300'>
 								<p className='text-[9px] leading-[11px] text-neutral-700'>商品の情報</p>
 							</div>
 							<div className='w-full px-[13px] text-[11px] leading-[13px] text-neutral text-neutral-700'>
@@ -183,7 +183,7 @@ export default function SliderProduct({isRoom, data, className}: SliderProductPr
 										<p>長袖　＞</p>
 									</div>
 								</div>
-								<div className='grid grid-cols-[88fr_187fr] items-center gap-[55px] mb-[17px]'>
+								<div className='grid grid-cols-[88fr_187fr] items-center gap-[55px] mb-4'>
 									<p>商品の状態</p>
 									<div className='flex flex-col gap-1'>
 										<p>目立った傷や汚れは無し</p>

@@ -9,13 +9,12 @@ type ListItem = {
 
 type MyPageNavigationProps = {
 	title: string
-	className: string
 	list: ListItem[]
 }
 
-export default function MyPageNavigation({ title, list, className} : MyPageNavigationProps) {
+export default function MyPageNavigation({ title, list} : MyPageNavigationProps) {
 	return (
-		<div className={`my-page-navigation flex flex-col gap-4 w-full ${className}`}>
+		<div className="my-page-navigation flex flex-col gap-4 w-full">
 			<div className="pb-4 pl-[2px] border-b border-neutral-300">
 				<p className="text-[11px] leading-[13px] text-neutral-700">{title}</p>
 			</div>

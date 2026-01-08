@@ -60,7 +60,7 @@ export default function Footer({ isSubFooter= false }: FooterProps) {
 						))}
 					</div>
 				) : (
-					<div className='flex items-end w-full max-w-[768px] h-[117px] pb-[14px] pl-[18px]'>
+					<div className='flex items-end w-full max-w-[768px] h-[117px] pb-[14px] px-[10px]'>
 						<p className='text-[8px] leading-[10px] text-white'>@Creative & Planning by New Company.2026</p>
 					</div>
 				)

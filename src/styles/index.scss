@@ -1,133 +1,163 @@
-@use "./tokens" as *;
+@use './tokens' as *;
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "primereact/resources/themes/lara-light-cyan/theme.css";
-@import url("https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import 'primereact/resources/themes/lara-light-cyan/theme.css';
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 @layer utilities {
-	.no-scrollbar {
-		-ms-overflow-style: none;
-		scrollbar-width: none;
-	}
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-	.no-scrollbar::-webkit-scrollbar {
-		display: none;
-	}
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 html,
 body,
 #root {
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
 :root {
-	color: $color-text-primary;
-	font-family: $font-family-base;
-	line-height: 1.4;
-	font-weight: 400;
-	color-scheme: light;
-	--kb: 0px;
+  color: $color-text-primary;
+  font-family: $font-family-base;
+  line-height: 1.4;
+  font-weight: 400;
+  color-scheme: light;
+  --kb: 0px;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 html {
-	height: -webkit-fill-available;
+  height: -webkit-fill-available;
 }
 
 body {
-	@apply font-inter text-neutral-500;
+  @apply font-inter text-neutral-600;
 
-	margin: 0;
-	min-height: 100vh;
-	min-height: -webkit-fill-available;
-	-webkit-text-size-adjust: 100%;
+  margin: 0;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  -webkit-text-size-adjust: 100%;
+  overflow: hidden;
 }
 
 #root {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	max-height: 100vh;
-	margin: 0 auto;
-	overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-height: 100vh;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 .app-shell-wrapper {
-	width: 100%;
-	overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 
-	.app-shell {
-		width: 100%;
-		max-height: calc(100vh);
-		overflow-y: auto;
-		overflow-x: hidden;
-		scrollbar-width: none;
-	}
+  .app-shell {
+    width: 100%;
+    max-height: calc(100vh);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
 }
 
 @media (min-width: 1024px) {
-	#root {
-		display: flex;
-		justify-content: center;
-		max-height: 100vh;
-		overflow: hidden;
-		margin: 0 auto;
-	}
+  #root {
+    display: flex;
+    justify-content: center;
+    max-height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
+  }
 
-	.app-shell {
-		width: $mobile-content-width;
-		max-height: calc(100vh);
-		overflow-y: auto;
-		overflow-x: hidden;
-		scrollbar-width: none;
-	}
+  .app-shell {
+    width: $mobile-content-width;
+    max-height: calc(100vh);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
 }
 
 .logo {
-	height: $space-size-4xlarge;
-	padding: $space-size-base;
-	transition: transform 0.3s ease;
+  height: $space-size-4xlarge;
+  padding: $space-size-base;
+  transition: transform 0.3s ease;
 }
 
 .logo:hover {
-	transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .card {
-	padding: $space-size-medium;
-	border-radius: $border-radius-medium;
-	background: rgba(248, 250, 252, 0.8);
-	box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.12);
+  padding: $space-size-medium;
+  border-radius: $border-radius-medium;
+  background: rgba(248, 250, 252, 0.8);
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.12);
 }
 
 .read-the-docs {
-	color: $color-text-secondary;
+  color: $color-text-secondary;
 }
 
 .number {
-	font-family: $font-family-num-base;
+  font-family: $font-family-num-base;
 }
 
 @supports (-webkit-touch-callout: none) {
-	input,
-	textarea,
-	select {
-		font-size: 16px !important;
-	}
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+.zoom-in-ani {
+  animation: zoomIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+.body-container {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+.container {
+  @apply w-full max-w-[768px] pt-4 pb-14 px-[10px];
 }

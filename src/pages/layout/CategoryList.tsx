@@ -173,7 +173,7 @@ export default function CategoryList() {
 		},
 	];
 
-	const categoryClass = "flex justify-between items-center h-[46px] pl-[2px] pr-[15px] border-b border-neutral-300 [&_img]:w-[5px] [&_img]:h-2";
+	const categoryClass = "flex justify-between items-center h-[46px] pl-[2px] pr-4 border-b border-neutral-300 [&_img]:w-[5px] [&_img]:h-2";
 
 	const [title, setTitle] = useState("カテゴリー");
 	const [level, setLevel] = useState(1);
@@ -191,7 +191,7 @@ export default function CategoryList() {
 	return (
 		<div className="category-list flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title={title}/>
-			<div className="flex flex-col w-full max-w-[768px] pb-[58px] px-3 text-[11px] leading-[13px]">
+			<div className="container flex flex-col text-[11px] leading-[13px]">
 				{level > 1 && (
 					<div className={categoryClass}>
 						<p>すべて</p>

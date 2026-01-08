@@ -1,20 +1,20 @@
 export default function TimeTable({list, className}) {
 	return (
-		<div className={`time-table flex flex-col gap-[11px] px-[15px] ${className}`}>
-			<div className="pb-[5px] pl-[11px] border-b border-neutral-300">
+		<div className={`time-table flex flex-col gap-2 ${className}`}>
+			<div className="pb-1 px-3 border-b border-neutral-300">
 				<p className="text-[9px] leading-[11px] text-neutral-700">タイムテーブル</p>
 			</div>
-			<div className="flex flex-col gap-4 pl-[9px] pr-[38px]">
+			<div className="flex flex-col gap-4 pl-2 pr-9">
 				{
 					list?.map((item, index) =>
 						<div
 							key={index}
-							className="grid grid-cols-[72fr_224fr] items-center gap-[17px]"
+							className="grid grid-cols-[72fr_224fr] items-center gap-4"
 						>
 							<img 
 								src={item?.img} 
 								alt="product"
-								className='aspect-square'
+								className='aspect-square rounded-[4px]'
 							/>
 							<div className="flex flex-col gap-[14px]">
 								<p className="text-[13px] leading-[16px] text-neutral-600">{item?.name}</p>

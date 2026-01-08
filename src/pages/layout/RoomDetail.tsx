@@ -54,15 +54,13 @@ export default function RoomDetail() {
 	return (
 		<div className="item-detail flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="商品詳細"/>
-			<div className="flex flex-col w-full max-w-[768px] pt-[18px] pb-[30px]">
+			<div className="container flex flex-col">
 				<SliderProduct data={data} isRoom className="mb-[54px]"/>
 				<Seller data={seller} className="mb-[33px]"/>
 				<TimeTable className="mb-[65px]" list={timeTable}/>
-				<div className="w-full px-3">
-					<ButtonContainer>
-						2026年3月26日19:00頃〜　配信開始
-					</ButtonContainer>
-				</div>
+				<ButtonContainer>
+					2026年3月26日19:00頃〜　配信開始
+				</ButtonContainer>
 			</div>
 		</div>
 	);

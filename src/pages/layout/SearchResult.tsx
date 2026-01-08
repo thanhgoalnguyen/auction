@@ -83,8 +83,8 @@ export default function SearchResult() {
 	return (
 		<div className="search-result flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="メンズジャケットの検索結果"/>
-			<div className="flex flex-col gap-5 w-full max-w-[768px] pt-6 pb-[58px] px-3 text-[11px] leading-[13px]">
-				<div className="flex flex-col items-end gap-[11px] pb-[6px] px-[18px] border-b border-neutral-300">
+			<div className="container flex flex-col gap-5 text-[11px] leading-[13px]">
+				<div className="flex flex-col items-end gap-3 pb-[6px] px-3 border-b border-neutral-300">
 					<SortDropdown/>
 					<div className="flex justify-between items-center w-full">
 						<StatusDropdown/>
@@ -98,7 +98,7 @@ export default function SearchResult() {
 						</button>
 					</div>
 				</div>
-				<div className="grid grid-cols-2 gap-x-[3px] gap-y-[9px] w-full px-[7px]">
+				<div className="grid grid-cols-2 gap-x-1 gap-y-2 w-full">
 					{
 						listRecentViewProduct?.map((item, index) => 
 							<Product data={item} key={index}/>

@@ -4,6 +4,8 @@ import PageHeader from "@/components/layout/PageHeader";
 import PolicyTerm from "@/components/ui/PolicyTerm";
 import SearchTopItem from "@/components/ui/SearchTopItem";
 
+import { ROUTE_PATH } from '@/data/demo';
+
 import remove from "@/assets/icon/searchTop/remove.svg";
 import search from "@/assets/icon/searchTop/search.svg";
 
@@ -13,40 +15,40 @@ export default function SearchTop() {
 	const listSearchText = [
 		{
 			title: "メンズ",
-			link: "/"			
+			link: ROUTE_PATH?.SEARCH_RESULT			
 		},
 		{
 			title: "メンズTシャツ",
-			link: "/"			
+			link: ROUTE_PATH?.SEARCH_RESULT			
 		},
 		{
 			title: "メンズ財布",
-			link: "/"			
+			link: ROUTE_PATH?.SEARCH_RESULT			
 		},
 		{
 			title: "メンズショルダーバック",
 			subTitle: "メンズショルダーバック",
-			link: "/"			
+			link: ROUTE_PATH?.SEARCH_RESULT			
 		},
 		{
 			title: "メンズネックレス",
-			link: "/"			
+			link: ROUTE_PATH?.SEARCH_RESULT			
 		},
 		{
 			title: "メンズジャケット",
-			link: "/"			
+			link: ROUTE_PATH?.SEARCH_RESULT			
 		},
 		{
 			title: "メンズパンツ",
-			link: "/"			
+			link: ROUTE_PATH?.SEARCH_RESULT			
 		},
 		{
 			title: "メンズジーンズ",
-			link: "/"			
+			link: ROUTE_PATH?.SEARCH_RESULT			
 		},
 		{
 			title: "メンズジーンズ",
-			link: "/"			
+			link: ROUTE_PATH?.SEARCH_RESULT			
 		},
 	]
 
@@ -61,7 +63,7 @@ export default function SearchTop() {
 	return (
 		<div className="search-top flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="検索"/>
-			<div className="flex flex-col gap-[17px] w-full max-w-[768px] pt-[14px] pb-[58px] px-4">
+			<div className="container flex flex-col gap-4">
 				<div className="flex items-center gap-3">
 					<button
 						onClick={handleRemoveSearch} 

@@ -14,16 +14,16 @@ export default function Login() {
   	return (
 		<div className="login flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="ログイン"/>
-			<div className="flex flex-col w-full max-w-[768px] pt-[18px] pb-[58px] px-[9px]">
-				<p className="text-[10px] leading-[12px] mb-[29px] ml-auto mr-5">会員登録はこちら</p>
+			<div className="container flex flex-col">
+				<p className="text-[10px] leading-[12px] mb-7 ml-auto mr-4">会員登録はこちら</p>
 				<Input
-					className="mb-[17px]"
+					className="mb-4"
 					label="メールアドレス"
 					placeholder="future.vintage@example.com"
 				>
 				</Input>
 				<Input
-					className="mb-[43px]"
+					className="mb-11"
 					label="パスワード"
 				>
 				</Input>
@@ -50,7 +50,7 @@ export default function Login() {
 					に同意の上、ログインへお進み
 				</p>
 				<p className="mb-[123px] ml-1 text-[11px] leading-[13px]">ください。</p>
-				<p className="mb-[26px] mx-auto text-[10px] leading-[12px] text-red-200">アカウントをお持ちでない方</p>
+				<p className="mb-6 mx-auto text-[10px] leading-[12px] text-red-200">アカウントをお持ちでない方</p>
 				<ButtonContainer 
 					onClick={handleToTop}
 					kind="outline"

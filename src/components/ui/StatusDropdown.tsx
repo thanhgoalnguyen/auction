@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useOutletContext } from "react-router-dom";
 
 import arrowDown from "@/assets/icon/policyTerm/arrow-down.svg";
@@ -11,6 +11,7 @@ export default function StatusDropdown() {
 	const [value, setValue] = useState(1);
 
 	const bodyContainerRef = useOutletContext<React.RefObject<HTMLDivElement>>();
+	const statusRef = useRef(null);
 
 	const listStatus = [
 		{
@@ -38,12 +39,23 @@ export default function StatusDropdown() {
 	}
 
 	useEffect(() => {
-		if (open) {
-			bodyContainerRef.current.classList.add('overflow-hidden');
-		} else {
-			bodyContainerRef.current.classList.remove('overflow-hidden');
+		function handleClickOutside(event) {
+			if (statusRef.current && !statusRef.current.contains(event.target)) {
+				handleOpen();
+			}
 		}
-	}, [open])
+
+		if (open) {
+    		document.addEventListener("mousedown", handleClickOutside);
+			bodyContainerRef?.current?.classList?.add('overflow-hidden');
+		}
+
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+			bodyContainerRef?.current?.classList?.remove('overflow-hidden');
+
+		};
+	}, [open, bodyContainerRef])
 
   	return (
 		<div className="relative">
@@ -52,11 +64,14 @@ export default function StatusDropdown() {
 				<img 
 					src={arrowDown} 
 					alt="arrow"
-					className='w-2 h-[5px]'
+					className={`w-2 h-[5px] ${open && "rotate-180"}`}
 				/>
 			</button>
-			{ open && 
-				<div className="absolute top-full left-0 z-[2] translate-y-[5px] translate-x-[-18px] flex flex-col justify-center gap-[9px] w-[129px] h-max p-2 bg-dark-300">
+			{open && 
+				<div
+					ref={statusRef}
+				 	className="absolute top-full left-0 z-[2] translate-y-[5px] translate-x-[-18px] flex flex-col justify-center gap-2 w-[129px] h-max p-2 bg-dark-300"
+				>
 					{listStatus?.map(item =>
 						<button 
 							className="flex justify-between items-center" 
@@ -74,7 +89,7 @@ export default function StatusDropdown() {
 				</div>
 			}
 			{open && 
-				<div onClick={handleOpen} className="fixed top-[55px] bottom-[72px] z-[1] left-0 w-full h-[calc(100%-127px)] bg-neutral-900 bg-opacity-40"></div>
+				<div className="fixed top-[55px] bottom-[72px] z-[1] left-0 w-full h-[calc(100%-127px)] bg-neutral-900 bg-opacity-40"></div>
 			}
 		</div>
 	);

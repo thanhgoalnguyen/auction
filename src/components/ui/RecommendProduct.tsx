@@ -66,9 +66,9 @@ export default function RecommendProduct() {
 	];
 
 	return (
-		<div className="recommend-product flex flex-col gap-[15px] w-full px-4">
-			<p className="text-[11px] leading-[13px]">最近閲覧した商品</p>
-			<div className="grid grid-cols-2 gap-x-[2px] gap-y-[11px] w-full">
+		<div className="recommend-product flex flex-col gap-2 w-full">
+			<p className="ml-3 text-[11px] leading-[13px]">最近閲覧した商品</p>
+			<div className="grid grid-cols-2 gap-x-[2px] gap-y-3 w-full">
 				{
 					listRecentViewProduct?.map((item, index) => 
 						<Product data={item} key={index} showShop/>

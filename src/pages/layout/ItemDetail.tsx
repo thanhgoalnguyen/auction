@@ -56,26 +56,6 @@ export default function ItemDetail() {
 			money: "1,400",
 			link: "/"
 		},
-		{
-			img: product6,
-			money: "22,000",
-			link: "/"
-		},
-		{
-			img: product7,
-			money: "16,000",
-			link: "/"
-		},
-		{
-			img: product8,
-			money: "800",
-			link: "/"
-		},
-		{
-			img: product9,
-			money: "1,400",
-			link: "/"
-		},
 	];
 
 	const listRecommendThisProduct = [
@@ -134,17 +114,15 @@ export default function ItemDetail() {
 	return (
 		<div className="item-detail flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="商品詳細"/>
-			<div className="flex flex-col w-full max-w-[768px] pt-[18px] pb-[58px]">
+			<div className="container flex flex-col">
 				<SliderProduct data={data} className="mb-[49px]"/>
 				<Seller data={seller} className="mb-9"/>
 				<AuctionRoom data={auctionRoom}/>
 				<ProductFromSeller list={listProductFromSeller}/>
 				<RecommendThisProduct list={listRecommendThisProduct}/>
-				<div className="w-full px-3">
-					<ButtonContainer>
-						2026年3月26日19:00頃〜　配信開始
-					</ButtonContainer>
-				</div>
+				<ButtonContainer>
+					2026年3月26日19:00頃〜　配信開始
+				</ButtonContainer>
 			</div>
 			<PolicyTerm/>
 		</div>

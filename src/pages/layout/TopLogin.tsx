@@ -9,7 +9,7 @@ export default function TopLogin() {
 	return (
 		<div className="top-login flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader isTopPage isAuth/>
-			<div className="w-full max-w-[768px] pt-[18px] pb-[58px]">
+			<div className="container flex flex-col gap-8">
 				<LikedProduct/>
 				<PopularCategory/>
 				<RecentProduct/>

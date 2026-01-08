@@ -12,7 +12,7 @@ export default function Header() {
 	return (
 		<div className="relative flex justify-center items-center w-full max-w-[768px] pt-[22px] pb-[17px] [&_img]:w-full [&_img]:h-full">
 			<Link 
-				to="/" 
+				to={ROUTE_PATH?.TOP_NO_LOGIN} 
 				className="w-full max-w-[103px] aspect-[103/16]"
 			>
 				<img 
@@ -24,7 +24,7 @@ export default function Header() {
 			{
 				isRenderSearch && (
 					<Link 
-						to="/search-top" 
+						to={ROUTE_PATH?.SEARCH_TOP}
 						className="absolute top-[23px] right-[17px] w-4 h-4"
 					>
 						<img 

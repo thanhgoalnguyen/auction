@@ -32,9 +32,9 @@ export default function LikeList() {
 	return (
 		<div className="like-list flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="いいね！一覧"/>
-			<div className="flex flex-col gap-[17px] w-full max-w-[768px] pt-7 pb-[58px] px-4">
-				<div className="flex justify-between items-center pl-[13px] pr-1 text-[10px] leading-[12px]">
-					<label className="flex items-center gap-[9px] cursor-pointer">
+			<div className="container flex flex-col gap-4">
+				<div className="flex justify-between items-center px-3 text-[10px] leading-[12px]">
+					<label className="flex items-center gap-2 cursor-pointer">
 						<img 
 							src={checkbox} 
 							alt="checkbox" 
@@ -57,7 +57,7 @@ export default function LikeList() {
 					</button>
 				</div>
 				<div className="flex flex-col gap-[10px]">
-					<div className="pb-[5px] pl-[13px] border-b border-neutral-300">
+					<div className="pb-1 pl-3 border-b border-neutral-300">
 						<p className="text-[12px] leading-[15px]">全ての商品</p>
 					</div>
 					<div className="flex flex-col gap-[10px]">

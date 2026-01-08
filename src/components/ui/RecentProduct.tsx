@@ -59,8 +59,8 @@ export default function RecentProduct() {
 	}
 
 	return (
-		<div className="recent-product flex flex-col gap-[11px] w-full px-[6px] mb-[38px]">
-			<div className="flex justify-between items-center pl-[9px] pr-[13px]">
+		<div className="recent-product flex flex-col gap-2 w-full">
+			<div className="flex justify-between items-center px-3">
 				<p className="text-[11px] leading-[13px]">最近閲覧した商品</p>
 				<button 
 					onClick={handleClickDelete} 

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { ROUTE_PATH } from '@/data/demo';
+
 import category1 from "@/assets/img/1.png";
 import category2 from "@/assets/img/2.png";
 import category3 from "@/assets/img/3.png";
@@ -52,11 +54,11 @@ export default function PopularCategory() {
 		},
 	]
 	return (
-		<div className="popular-category flex flex-col gap-[9px] w-full px-[6px] mb-[33px]">
-			<div className="flex justify-between items-end pl-[9px] pr-[13px]">
+		<div className="popular-category flex flex-col gap-2 w-full">
+			<div className="flex justify-between items-end px-3">
 				<p className="text-[11px] leading-[13px]">人気のカテゴリー</p>
 				<Link 
-					to="/" 
+					to={ROUTE_PATH?.CATEGORY_LIST}
 					className="text-[9px] leading-[11px]"
 				>
 					すべて見る ＞
@@ -72,12 +74,12 @@ export default function PopularCategory() {
 							<SwiperSlide key={index}>	
 								<Link 
 									to={item?.link} 
-									className="flex flex-col items-center gap-[5px]"
+									className="flex flex-col items-center gap-1"
 								>
 									<img 
 										src={item?.img} 
 										alt="category" 
-										className="w-full aspect-square object-cover"
+										className="w-full aspect-square object-cover rounded-[2px]"
 									/>
 									<p className="text-[8px] leading-[10px] text-neutral-1200 text-center">{item?.name}</p>
 								</Link>
