@@ -16,7 +16,8 @@ export default function LikeList() {
 		{
 			img: product1,
 			name: "balenciaga ストンパーブーツ",
-			money: "1,200"
+			money: "1,200",
+			isRed: true
 		},
 		{
 			img: product2,

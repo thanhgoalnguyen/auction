@@ -25,6 +25,7 @@ export default function Login() {
 				<Input
 					className="mb-11"
 					label="パスワード"
+					type="password"
 				>
 				</Input>
 				<ButtonContainer 

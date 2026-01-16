@@ -1,16 +1,24 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import PageHeader from "@/components/layout/PageHeader";
 import Input from '@/components/ui/Input';
 import ButtonContainer from '@/components/ui/ButtonContainer';
 
+import { ROUTE_PATH } from '@/data/demo';
+
 export default function UserRegistration() {
   	const navigate = useNavigate();
+	const [length, setLength] = useState(0);
 
 	const handleToTop = () => {
-		navigate('/');
+		navigate(ROUTE_PATH?.REGISTRATION_EMAIL_SENT);
 	}
 
+	const handleChangePass = (event) => {
+		const value = event?.target?.value;
+		setLength(value?.length);
+	}
   	return (
 		<div className="user-registration flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="会員登録"/>
@@ -32,10 +40,13 @@ export default function UserRegistration() {
 					className="mb-[59px]"
 					label="ニックネーム"
 					placeholder="Future Vintage内でのニックネーム"
+					type="password"
+					maxLength={20}
+					onChange={handleChangePass}
 				>
 					<>
 						<p>※ニックネームは後から変更できます</p>
-						<p>0/20</p>
+						<p className='text-black'>{length}/20</p>
 					</>
 				</Input>
 				<ButtonContainer onClick={handleToTop}>

@@ -79,7 +79,7 @@ export default function PopularCategory() {
 									<img 
 										src={item?.img} 
 										alt="category" 
-										className="w-full aspect-square object-cover rounded-[2px]"
+										className="w-full aspect-square object-cover rounded-[8px]"
 									/>
 									<p className="text-[8px] leading-[10px] text-neutral-1200 text-center">{item?.name}</p>
 								</Link>

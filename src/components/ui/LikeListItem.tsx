@@ -15,7 +15,7 @@ export default function LikeListItem({data, isEdit}) {
 				<div className="flex justify-between items-center gap-1">
 					<div className="flex items-center gap-1 text-[10px] leading-[12px]">
 						<p>最低落札価格：</p>
-						<p>¥{data?.money}</p>
+						<p className={`${data?.isRed && "text-red-100"}`}>¥{data?.money}</p>
 					</div>
 					<button className={!isEdit && "invisible"}>
 						<img 

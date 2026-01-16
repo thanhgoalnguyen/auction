@@ -107,7 +107,7 @@ export default function SliderProduct({isRoom, data, className}: SliderProductPr
 						<div className='pb-1 pl-2 mb-8 border-b border-neutral-300'>
 							<p className='text-[9px] leading-[11px] text-neutral-700'>オークションルームの説明</p>
 						</div>
-						<div className='w-full px-3 text-[11px] leading-[13px] text-neutral text-neutral-700'>
+						<div className='w-full px-3 text-[9px] leading-[11px] text-neutral text-neutral-700'>
 							<div className="flex flex-col gap-1 mb-5">
 								<p>クリストファー・ネメス（CHRISTOPHER NEMETH）の立体裁断テーラー</p>
 								<p>ドジャケットの他、3点出品しています。</p>
