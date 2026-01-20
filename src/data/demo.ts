@@ -292,20 +292,20 @@ export const getUserImageURL = (userId: number) => {
 }
 
 export const ROUTE_PATH = {
-	TOP_NO_LOGIN: "/",
-	TOP_LOGIN: "/auth",
-	LIKE_LIST: "/like-list",
-	SEARCH_TOP: "/search-top",
-	USER_REGISTRATION: "/user-registration",
-	LOGIN: "/login",
-	REGISTRATION_EMAIL_SENT: "/registration-email-sent",
-	CATEGORY_LIST: "/category-list",
-	SEARCH_RESULT: "/search-result",
-	MY_PAGE: "/my-page",
-	USER_PROFILE: "/user-profile",
-	OTHER_PROFILE: "/other-profile",
-	ITEM_DETAIL: "/item-detail",
-	ROOM_DETAIL: "/room-detail",
+	TOP_NO_LOGIN: "/layout/",
+	TOP_LOGIN: "/layout/auth",
+	LIKE_LIST: "/layout/like-list",
+	SEARCH_TOP: "/layout/search-top",
+	USER_REGISTRATION: "/layout/user-registration",
+	LOGIN: "/layout/login",
+	REGISTRATION_EMAIL_SENT: "/layout/registration-email-sent",
+	CATEGORY_LIST: "/layout/category-list",
+	SEARCH_RESULT: "/layout/search-result",
+	MY_PAGE: "/layout/my-page",
+	USER_PROFILE: "/layout/user-profile",
+	OTHER_PROFILE: "/layout/other-profile",
+	ITEM_DETAIL: "/layout/item-detail",
+	ROOM_DETAIL: "/layout/room-detail",
 };
 
 export const SUB_FOOTER_ROUTE = [

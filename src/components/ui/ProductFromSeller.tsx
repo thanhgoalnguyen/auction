@@ -8,7 +8,7 @@ export default function ProductFromSeller({list}) {
 			<div className="flex justify-between items-center pb-1 px-3 border-b border-neutral-300">
 				<p className="text-[9px] leading-[11px] text-neutral-700">この出品者の商品</p>
 				<Link 
-					to="/"
+					to="/layout/"
 					className="text-[7px] leading-[8px] text-neutral-600"
 				>
 					すべて見る ＞

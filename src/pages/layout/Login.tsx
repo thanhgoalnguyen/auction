@@ -36,14 +36,14 @@ export default function Login() {
 				</ButtonContainer>
 				<p className="mb-[6px] ml-1 text-[11px] leading-[13px]">
 					<Link 
-						to="/"
+						to="/layout/"
 						className="text-red-200"
 					>
 						利用規約
 					</Link>
 					および
 					<Link 
-						to="/"
+						to="/layout/"
 						className="text-red-200"
 					>
 						プライバシーポリシー
