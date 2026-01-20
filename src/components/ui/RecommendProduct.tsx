@@ -21,7 +21,7 @@ export default function RecommendProduct() {
 			nameProduct: "balenciaga ストンパーブーツ",
 			imgShop: shop16,
 			nameShop: "simgffj",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product11,
@@ -29,7 +29,7 @@ export default function RecommendProduct() {
 			nameProduct: "Noir kei ninomiya ラッフルスカート",
 			imgShop: shop17,
 			nameShop: "ponta",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product12,
@@ -37,7 +37,7 @@ export default function RecommendProduct() {
 			nameProduct: "DRIES VAN NOTEN スタッズ",
 			imgShop: shop18,
 			nameShop: "佐藤美加",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product13,
@@ -45,7 +45,7 @@ export default function RecommendProduct() {
 			nameProduct: "W&LT / Psychedelic Knit Vest",
 			imgShop: shop19,
 			nameShop: "meangirls",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product14,
@@ -53,7 +53,7 @@ export default function RecommendProduct() {
 			nameProduct: "アーティザナル トロンプルイユ",
 			imgShop: shop20,
 			nameShop: "ReviResonia",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product15,
@@ -61,7 +61,7 @@ export default function RecommendProduct() {
 			nameProduct: "Archive Denim Half Coat",
 			imgShop: shop21,
 			nameShop: "ichigo",
-			link: "/a"
+			link: "/layout",
 		},
 	];
 
@@ -69,13 +69,10 @@ export default function RecommendProduct() {
 		<div className="recommend-product flex flex-col gap-2 w-full">
 			<p className="ml-3 text-[11px] leading-[13px]">最近閲覧した商品</p>
 			<div className="grid grid-cols-2 gap-x-[2px] gap-y-3 w-full">
-				{
-					listRecentViewProduct?.map((item, index) => 
-						<Product data={item} key={index} showShop/>
-					)
-				}
+				{listRecentViewProduct?.map((item, index) => (
+					<Product data={item} key={index} showShop />
+				))}
 			</div>
 		</div>
-	)
+	);
 }
-  

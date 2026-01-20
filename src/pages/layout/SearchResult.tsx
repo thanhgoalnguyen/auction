@@ -27,86 +27,80 @@ export default function SearchResult() {
 			money: "11,200",
 			nameProduct: "balenciaga ストンパージャケット",
 			nameShop: "simgffj",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product23,
 			money: "9,500",
 			nameProduct: "Noir kei ninomiya ラッフルスカート",
 			nameShop: "ponta",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product24,
 			money: "6,000",
 			nameProduct: "DRIES VAN NOTEN スタッズ",
 			nameShop: "佐藤美加",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product25,
 			money: "12,000",
 			nameProduct: "W&LT / Psychedelic Knit Vest",
 			nameShop: "meangirls",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product26,
 			money: "9,200",
 			nameProduct: "アーティザナル トロンプルイユ",
 			nameShop: "ReviResonia",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product27,
 			money: "38,000",
 			nameProduct: "Archive Denim Half Coat",
 			nameShop: "ichigo",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product28,
 			money: "1,200",
 			nameProduct: "balenciaga ストンパーブーツ",
 			nameShop: "ichigo",
-			link: "/a"
+			link: "/layout",
 		},
 		{
 			imgProduct: product29,
 			money: "9,500",
 			nameProduct: "Noir kei ninomiya ラッフルスカート",
 			nameShop: "ichigo",
-			link: "/a"
+			link: "/layout",
 		},
 	];
 
 	return (
 		<div className="search-result flex flex-col items-center w-full h-max min-h-full">
-			<PageHeader title="メンズジャケットの検索結果"/>
+			<PageHeader title="メンズジャケットの検索結果" />
 			<div className="container flex flex-col gap-5 text-[11px] leading-[13px]">
 				<div className="flex flex-col items-end gap-3 pb-[6px] px-3 border-b border-neutral-300">
-					<SortDropdown/>
+					<SortDropdown />
 					<div className="flex justify-between items-center w-full">
-						<StatusDropdown/>
+						<StatusDropdown />
 						<button className="flex items-center gap-2">
-							<img 
-								src={filter} 
-								alt="filter"
-								className='w-[11px] h-[9px]'
-							/>
+							<img src={filter} alt="filter" className="w-[11px] h-[9px]" />
 							<p className="text-[12px] leading-[15px]">絞り込み(1)</p>
 						</button>
 					</div>
 				</div>
 				<div className="grid grid-cols-2 gap-x-1 gap-y-2 w-full">
-					{
-						listRecentViewProduct?.map((item, index) => 
-							<Product data={item} key={index}/>
-						)
-					}
+					{listRecentViewProduct?.map((item, index) => (
+						<Product data={item} key={index} />
+					))}
 				</div>
 			</div>
-			<PolicyTerm/>
+			<PolicyTerm />
 		</div>
 	);
 }
