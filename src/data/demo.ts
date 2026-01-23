@@ -306,6 +306,16 @@ export const ROUTE_PATH = {
 	OTHER_PROFILE: "/layout/other-profile",
 	ITEM_DETAIL: "/layout/item-detail",
 	ROOM_DETAIL: "/layout/room-detail",
+	FOLLOW_LIST: "/layout/follow-list",
+	VIEW_HISTORY: "/layout/view-history",
+	WON_ITEM_LIST: "/layout/won-item-list",
+	PERSONAL_INFORMATION_SETTING: "/layout/personal-information-setting",
+	USER_PROFILE_SETTING: "/layout/user-profile-setting",
+	SHIPPING_ADDRESS_LIST: "/layout/shipping-address-list",
+	EMAIL_PASSWORD_SETTING: "/layout/email-password-setting",
+	SHIPPING_ADDRESS_REGISTRATION: "/layout/shipping-address-registration",
+	POST: "/layout/post",
+	POST_ITEM: "/layout/post-item",
 };
 
 export const SUB_FOOTER_ROUTE = [

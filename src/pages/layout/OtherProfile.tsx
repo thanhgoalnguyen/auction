@@ -6,7 +6,7 @@ import empty from "@/assets/icon/userProfile/empty.svg";
 
 export default function OtherProfile() {
 	return (
-		<div className="user-profile flex flex-col items-center w-full h-max min-h-full">
+		<div className="user-profile-page flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="マイプロフィール"/>
 			<div className="container">
 				<UserProfileInfo className="mb-7"/>

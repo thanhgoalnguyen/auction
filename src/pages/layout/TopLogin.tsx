@@ -7,7 +7,7 @@ import PolicyTerm from "@/components/ui/PolicyTerm";
 
 export default function TopLogin() {
 	return (
-		<div className="top-login flex flex-col items-center w-full h-max min-h-full">
+		<div className="top-login-page flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader isTopPage isAuth/>
 			<div className="container flex flex-col gap-8">
 				<LikedProduct/>

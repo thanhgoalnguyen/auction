@@ -11,10 +11,9 @@ type ProductData = {
 
 type ProductProps = {
 	data: ProductData
-	showShop?: boolean
 }
 
-export default function Product({data, showShop} : ProductProps) {
+export default function Product({data} : ProductProps) {
 	return (
 		<Link 
 			to={data?.link} 
@@ -33,16 +32,14 @@ export default function Product({data, showShop} : ProductProps) {
 						<p className="text-red-100">¥{data?.money}</p>
 					</div>
 				</div>
-				{showShop &&
-					<div className="flex justify-end items-end gap-1">
-						<p className="text-[6px] leading-[7px] truncate">{data?.nameShop}</p>
-						<img 
-							src={data?.imgShop} 
-							alt="shop" 
-							className="w-[25px] h-[25px]"
-						/>
-					</div>
-				}
+				<div className="flex justify-end items-end gap-1">
+					<p className="text-[6px] leading-[7px] truncate">{data?.nameShop}</p>
+					<img 
+						src={data?.imgShop} 
+						alt="shop" 
+						className="w-[25px] h-[25px]"
+					/>
+				</div>
 			</div>
 		</Link>
 	);

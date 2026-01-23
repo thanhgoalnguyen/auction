@@ -61,7 +61,7 @@ export default function SearchTop() {
 	}
 
 	return (
-		<div className="search-top flex flex-col items-center w-full h-max min-h-full">
+		<div className="search-top-page flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="検索"/>
 			<div className="container flex flex-col gap-4">
 				<div className="flex items-center gap-3">

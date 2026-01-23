@@ -7,11 +7,11 @@ export default function RegistrationEmailSent() {
   	const navigate = useNavigate();
 
 	const handleToTop = () => {
-		navigate('/');
+		navigate('/layout/');
 	}
 
   	return (
-		<div className="registration-email-sent flex flex-col items-center w-full h-max min-h-full">
+		<div className="registration-email-sent-page flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="メールを送信しました"/>
 			<div className="container flex flex-col gap-[187px]">
 				<div className="flex flex-col gap-[6px] text-[13px] leading-[16px]">

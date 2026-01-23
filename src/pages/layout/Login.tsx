@@ -8,11 +8,11 @@ export default function Login() {
   	const navigate = useNavigate();
 
 	const handleToTop = () => {
-		navigate('/');
+		navigate('/layout/');
 	}
 
   	return (
-		<div className="login flex flex-col items-center w-full h-max min-h-full">
+		<div className="login-page flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="ログイン"/>
 			<div className="container flex flex-col">
 				<p className="text-[10px] leading-[12px] mb-7 ml-auto mr-4">会員登録はこちら</p>

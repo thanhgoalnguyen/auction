@@ -112,7 +112,7 @@ export default function ItemDetail() {
 	];
 
 	return (
-		<div className="item-detail flex flex-col items-center w-full h-max min-h-full">
+		<div className="item-detail-page flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="商品詳細"/>
 			<div className="container flex flex-col">
 				<SliderProduct data={data} className="mb-[49px]"/>

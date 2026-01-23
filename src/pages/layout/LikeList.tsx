@@ -17,7 +17,6 @@ export default function LikeList() {
 			img: product1,
 			name: "balenciaga ストンパーブーツ",
 			money: "1,200",
-			isRed: true
 		},
 		{
 			img: product2,
@@ -31,7 +30,7 @@ export default function LikeList() {
 	}
 
 	return (
-		<div className="like-list flex flex-col items-center w-full h-max min-h-full">
+		<div className="like-list-page flex flex-col items-center w-full h-max min-h-full">
 			<PageHeader title="いいね！一覧"/>
 			<div className="container flex flex-col gap-4">
 				<div className="flex justify-between items-center px-3 text-[10px] leading-[12px]">
@@ -74,7 +73,7 @@ export default function LikeList() {
 					</div>
 				</div>
 			</div>
-			<PolicyTerm/>
+			<PolicyTerm showMore/>
 		</div>
 	);
 }

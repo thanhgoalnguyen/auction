@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+// import { dummyUsers, dummySessionEntity } from './data/mock-data'
+
 import Layout from "./layouts/Layout.tsx";
 
 import TopNoLogin from "@/pages/layout/TopNoLogin.tsx";
@@ -16,11 +18,23 @@ import UserProfile from "./pages/layout/UserProfile.tsx";
 import OtherProfile from "./pages/layout/OtherProfile.tsx";
 import ItemDetail from "./pages/layout/ItemDetail.tsx";
 import RoomDetail from "./pages/layout/RoomDetail.tsx";
+import FollowList from "./pages/layout/FollowList.tsx";
+import ViewHistory from "./pages/layout/ViewHistory.tsx";
+import WonItemList from "./pages/layout/WonItemList.tsx";
+import PersonalInformationSetting from "./pages/layout/PersonalInformationSetting.tsx";
+import UserProfileSetting from "./pages/layout/UserProfileSetting.tsx";
+import ShippingAddressList from "./pages/layout/ShippingAddressList.tsx";
+import EmailPasswordSetting from "./pages/layout/EmailPasswordSetting.tsx";
+import ShippingAddressRegistration from "./pages/layout/ShippingAddressRegistration.tsx";
+import Post from "./pages/layout/Post.tsx";
+import PostItem from "./pages/layout/PostItem.tsx";
 
 import { ROUTE_PATH } from "./data/demo.ts";
 
 function App() {
-	//
+	// dummy data for "success" page.
+	// const organizer = dummyUsers.get(1);
+	// const sessionEntity = dummySessionEntity;
 
 	//   document.addEventListener('contextmenu', event => event.preventDefault())
 	return (
@@ -47,6 +61,31 @@ function App() {
 					<Route path={ROUTE_PATH?.OTHER_PROFILE} element={<OtherProfile />} />
 					<Route path={ROUTE_PATH?.ITEM_DETAIL} element={<ItemDetail />} />
 					<Route path={ROUTE_PATH?.ROOM_DETAIL} element={<RoomDetail />} />
+					<Route path={ROUTE_PATH?.FOLLOW_LIST} element={<FollowList />} />
+					<Route path={ROUTE_PATH?.VIEW_HISTORY} element={<ViewHistory />} />
+					<Route path={ROUTE_PATH?.WON_ITEM_LIST} element={<WonItemList />} />
+					<Route
+						path={ROUTE_PATH?.PERSONAL_INFORMATION_SETTING}
+						element={<PersonalInformationSetting />}
+					/>
+					<Route
+						path={ROUTE_PATH?.USER_PROFILE_SETTING}
+						element={<UserProfileSetting />}
+					/>
+					<Route
+						path={ROUTE_PATH?.SHIPPING_ADDRESS_LIST}
+						element={<ShippingAddressList />}
+					/>
+					<Route
+						path={ROUTE_PATH?.EMAIL_PASSWORD_SETTING}
+						element={<EmailPasswordSetting />}
+					/>
+					<Route
+						path={ROUTE_PATH?.SHIPPING_ADDRESS_REGISTRATION}
+						element={<ShippingAddressRegistration />}
+					/>
+					<Route path={ROUTE_PATH?.POST} element={<Post />} />
+					<Route path={ROUTE_PATH?.POST_ITEM} element={<PostItem />} />
 				</Route>
 			</Routes>
 			{/* <Routes>

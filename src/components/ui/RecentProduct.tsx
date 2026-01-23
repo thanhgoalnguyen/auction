@@ -55,7 +55,7 @@ export default function RecentProduct() {
 	];
 
 	const handleClickDelete = () => {
-		navigate('/');
+		navigate('/layout/');
 	}
 
 	return (
