@@ -4,16 +4,20 @@ import { useRef, useLayoutEffect } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
+import { HIDDEN_FOOTER } from "@/data/demo";
+
 export default function Layout() {
 	const location = useLocation();
 	const bodyContainerRef = useRef<HTMLDivElement>(null);
+
+	const isHiddenFooter = HIDDEN_FOOTER?.includes(location.pathname);
 
 	useLayoutEffect(() => {
 		bodyContainerRef.current.scrollTo(0, 0);
 	}, [location.pathname]);
 
 	return (
-		<div className="main-layout flex flex-col items-center w-full h-dvh bg-dark-100">
+		<div className="main-layout flex flex-col items-center w-full h-full bg-dark-100">
 			<header className="flex justify-center w-full h-max bg-dark-100">
 				<Header />
 			</header>
@@ -23,9 +27,11 @@ export default function Layout() {
 			>
 				<Outlet context={bodyContainerRef} />
 			</div>
-			<footer className="flex justify-center w-full h-max bg-dark-300">
-				<Footer />
-			</footer>
+			{!isHiddenFooter && (
+				<footer className="w-full">
+					<Footer />
+				</footer>
+			)}
 		</div>
 	);
 }

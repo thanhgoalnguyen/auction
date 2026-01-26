@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// import { dummyUsers, dummySessionEntity } from './data/mock-data'
+// import { dummyUsers, dummySessionEntity } from "./data/mock-data";
 
 import Layout from "./layouts/Layout.tsx";
 
