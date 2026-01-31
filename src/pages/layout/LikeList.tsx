@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import LikeListItem from "@/components/ui/LikeListItem";
 
 import checkbox from "@/assets/icon/likeList/checkbox.svg";
@@ -73,7 +72,6 @@ export default function LikeList() {
 					</div>
 				</div>
 			</div>
-			<PolicyTerm showMore/>
 		</div>
 	);
 }

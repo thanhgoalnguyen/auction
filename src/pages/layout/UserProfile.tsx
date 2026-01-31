@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import ButtonContainer from "@/components/ui/ButtonContainer";
 import UserProfileInfo from "@/components/ui/UserProfileInfo";
 import ProductPrice from "@/components/ui/ProductPrice";
@@ -70,7 +69,7 @@ export default function UserProfile() {
 	}
 
 	return (
-		<div className="user-profile-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="user-profile-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="出品者プロフィール"/>
 			<div className="container flex flex-col w-full grow">
 				<UserProfileInfo isUserProfile className="mb-[25px]"/>
@@ -123,7 +122,6 @@ export default function UserProfile() {
 					</ButtonContainer>
 				</div>
 			</div>
-			<PolicyTerm/>
 		</div>
 	);
 }

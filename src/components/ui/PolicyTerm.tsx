@@ -23,7 +23,8 @@ export default function PolicyTerm({showMore, hiddenList, hiddenCopyRight}: Poli
 			label: "プライバシーポリシー",
 			link: "/"
 		},
-	]
+	];
+
 	return (
 		<div className="policy-term flex flex-col items-center w-full mt-auto">
 			{

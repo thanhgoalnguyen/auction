@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 
 import arrowRight from "@/assets/icon/searchTop/arrow-right.svg";
 
@@ -225,7 +224,7 @@ export default function CategoryList() {
 	}
 
 	return (
-		<div className="category-list-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="category-list-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title={category?.title} showBack={category?.level > 1} handleBack={handleBack}/>
 			<div className="container flex flex-col text-[11px] leading-[13px]">
 				{category?.level > 1 && (
@@ -256,7 +255,6 @@ export default function CategoryList() {
                 	})
 				}
 			</div>
-			<PolicyTerm/>
 		</div>
 	);
 }

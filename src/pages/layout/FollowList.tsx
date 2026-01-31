@@ -1,5 +1,4 @@
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import FollowListItem from "@/components/ui/FollowListItem";
 
 import follow1 from "@/assets/img/31.png";
@@ -26,7 +25,7 @@ export default function FollowList() {
 	]
 
 	return (
-		<div className="follow-list-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="follow-list-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="フォローリスト"/>
 			<div className="container">
 				{
@@ -35,7 +34,6 @@ export default function FollowList() {
 					)
 				}
 			</div>
-			<PolicyTerm hiddenList hiddenCopyRight/>
 		</div>
 	);
 }

@@ -1,12 +1,11 @@
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import UserProfileInfo from "@/components/ui/UserProfileInfo";
 
 import empty from "@/assets/icon/userProfile/empty.svg";
 
 export default function OtherProfile() {
 	return (
-		<div className="user-profile-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="other-profile-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="マイプロフィール"/>
 			<div className="container">
 				<UserProfileInfo className="mb-7"/>
@@ -25,7 +24,6 @@ export default function OtherProfile() {
 					<p className="text-[9px] leading-[11px]">現在、出品された商品はありません</p>
 				</div>
 			</div>
-			<PolicyTerm hiddenList/>
 		</div>
 	);
 }

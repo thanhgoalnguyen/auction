@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import Input from "@/components/ui/Input";
 import Dropdown from '@/components/ui/Dropdown';
 import ButtonContainer from '@/components/ui/ButtonContainer';
@@ -16,7 +15,7 @@ export default function ShippingAddressRegistration() {
 	}
 
 	return (
-		<div className="user-profile-setting-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="user-profile-setting-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="住所の登録"/>
 			<div className="container">
 				<div className="flex flex-col gap-5 pb-7 mb-9 border-b border-neutral-300">
@@ -75,7 +74,6 @@ export default function ShippingAddressRegistration() {
 					更新する
 				</ButtonContainer>
 			</div>
-			<PolicyTerm showMore/>
 		</div>
 	);
 }

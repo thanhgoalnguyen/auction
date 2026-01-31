@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
 import PageHeader from "@/components/layout/PageHeader";
@@ -6,42 +7,46 @@ import Input from '@/components/ui/Input';
 import AddButton from '@/components/ui/AddButton';
 import Textarea from '@/components/ui/Textarea';
 import Dropdown from '@/components/ui/Dropdown';
-
-import { ROUTE_PATH } from '@/data/demo';
+import UploadButton from '@/components/ui/UploadButton';
+import MoneyInput from '@/components/ui/MoneyInput';
 
 import camera from "@/assets/icon/post/camera.svg";
 import arrowRight from "@/assets/icon/searchTop/arrow-right.svg";
 import product14 from "@/assets/img/14.png";
 
-export default function PostItem() {
-  	const navigate = useNavigate();
+import { ROUTE_PATH } from '@/data/demo';
 
-	const handleToTop = () => {
-		navigate(ROUTE_PATH?.TOP_NO_LOGIN);
-	}
-	
-	const valueText = `色、素材、重さ、定価、注意点など
+export default function PostItem() {
+		const desText = `色、素材、重さ、定価、注意点など
 
 例）20 年前にフランスで購入したブランド正規品です。
 数回使用しましたが、痛みも少なく非常に良品です。
 
 ＃ジャケット　＃ジャケットコーデ`;
+
+  	const navigate = useNavigate();
+
+	const [des, setDes] = useState(desText);
+	const [money, setMoney] = useState(0);
+
+	const handleToTop = () => {
+		navigate(ROUTE_PATH?.TOP_NO_LOGIN);
+	}
+
+	const handleChangeDes = (value) => {
+		setDes(value);
+	}
+
+	const handleChangeMoney = (e) => {
+		setMoney(e.target.value);
+	}
+	
 	return (
-		<div className="post-item-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="post-item-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="商品の出品"/>
 			<div className="container">
 				<p className="mb-2 text-[11px] leading-[13px] text-neutral-500">出品画像（最大20枚）</p>
-				<label
-					className="flex justify-center items-center w-full h-[27px] mb-3 text-[11px] leading-[13px] text-red-200 border border-red-200 rounded-[4px]"
-				>
-					画像を選択する
-					<input 
-						type="file" 
-						multiple 
-						accept="image/*" 
-						hidden 
-					/>
-				</label>
+				<UploadButton className="mb-3" hiddenIcon/>
 				<p className="mb-5 text-[9px] leading-[11px] text-neutral-700">商品の全体、詳細、文字入りの写真をアップロードしてください。</p>
 				<Input
 					label="商品名"
@@ -74,7 +79,8 @@ export default function PostItem() {
 						</div>}
 						maxLength={1000}
 						className="mb-4 [&_textarea]:h-[104px]"
-						value={valueText}
+						value={des}
+						onTextChange={handleChangeDes}
 					/>
 					<p className="mb-4 text-[11px] leading-[13px] text-neutral-700">配送について</p>
 					<p className="text-[11px] leading-[13px] text-neutral-500">送料込み（出品者負担）</p>
@@ -84,13 +90,10 @@ export default function PostItem() {
 						label="発送元の地域"
 						placeholder="選択してください"
 					/>
-				<div className='flex flex-col gap-1'>
-					<label className='ml-1 text-[11px] leading-[13px] text-neutral-500'>開始価格</label>
-				<div className="flex justify-between items-center gap-1 w-full h-[29px] px-[13px] text-[7px] leading-[8px] text-black bg-neutral-300 border border-black rounded-[2px]">
-					<p>¥</p>
-					<p>0</p>
-				</div>
-			</div>
+					<MoneyInput
+						value={money}
+						onChange={handleChangeMoney}
+					/>
 				</div>
 				<div className="flex flex-col gap-3 pb-4 mb-5 border-b border-neutral-300">
 					<p className="text-[11px] leading-[13px] text-neutral-500">オークションルーム</p>

@@ -52,7 +52,7 @@ export default function RoomDetail() {
 	]
 
 	return (
-		<div className="item-detail-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="item-detail-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="商品詳細"/>
 			<div className="container flex flex-col">
 				<SliderProduct data={data} isRoom className="mb-[54px]"/>

@@ -1,5 +1,4 @@
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import StatusDropdown from "@/components/ui/StatusDropdown";
 import SortDropdown from "@/components/ui/SortDropdown";
 import Product from "@/components/ui/Product";
@@ -89,7 +88,7 @@ export default function SearchResult() {
 	];
 
 	return (
-		<div className="search-result-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="search-result-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="メンズジャケットの検索結果"/>
 			<div className="container flex flex-col gap-5 text-[11px] leading-[13px]">
 				<div className="flex flex-col items-end gap-3 pb-[6px] px-3 border-b border-neutral-300">
@@ -114,7 +113,6 @@ export default function SearchResult() {
 					}
 				</div>
 			</div>
-			<PolicyTerm/>
 		</div>
 	);
 }

@@ -14,7 +14,7 @@ export default function UserRegistration() {
 	}
 	
   	return (
-		<div className="user-registration-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="user-registration-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="会員登録"/>
 			<div className="container">
 				<p className="text-[10px] leading-[12px] mb-6">メールアドレスとパスワードを入力してください</p>

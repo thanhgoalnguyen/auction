@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import ButtonContainer from '@/components/ui/ButtonContainer';
 import AddButton from "@/components/ui/AddButton";
 
@@ -38,7 +37,7 @@ export default function ShippingAddressList() {
 	}
 	
 	return (
-		<div className="shipping-address-list-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="shipping-address-list-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="住所一覧"/>
 			<div className="container">
 				<button className="flex items-center gap-3 w-max ml-auto mb-6">
@@ -80,7 +79,6 @@ export default function ShippingAddressList() {
 					更新する
 				</ButtonContainer>
 			</div>
-			<PolicyTerm showMore/>
 		</div>
 	);
 }

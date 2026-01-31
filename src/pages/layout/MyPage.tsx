@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import MyPageNavigation from "@/components/ui/MyPageNavigation";
 import LogOutModal from "@/components/ui/LogOutModal";
 
@@ -85,12 +84,11 @@ export default function MyPage() {
 	];
 
 	const handleOpen = () => {
-		console.log(44);
 		setOpen(!open);
 	};
  
 	return (
-		<div className="my-page-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="my-page-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="マイページ"/>
 			<div className="container flex flex-col gap-7 text-[11px] leading-[13px]">
 				<div className="flex justify-center items-center gap-9 px-5">
@@ -179,7 +177,6 @@ export default function MyPage() {
 					</button>
 				</div>
 			</div>
-			<PolicyTerm showMore/>
 			<LogOutModal open={open} handleOpen={handleOpen}/>
 		</div>
 	);

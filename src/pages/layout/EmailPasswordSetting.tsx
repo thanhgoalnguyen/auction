@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import ButtonContainer from '@/components/ui/ButtonContainer';
 import Input from "@/components/ui/Input";
 
@@ -16,7 +14,7 @@ export default function EmailPasswordSetting() {
 	}
 	
 	return (
-		<div className="email-password-setting-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="email-password-setting-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="メール・パスワード"/>
 			<div className="container">
 				<Input
@@ -54,7 +52,6 @@ export default function EmailPasswordSetting() {
 					更新する
 				</ButtonContainer>
 			</div>
-			<PolicyTerm showMore/>
 		</div>
 	);
 }

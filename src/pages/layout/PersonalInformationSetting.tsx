@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 
 import { ROUTE_PATH } from "@/data/demo";
 
@@ -22,7 +21,7 @@ export default function PersonalInformationSetting() {
 	]
 
 	return (
-		<div className="personal-information-setting-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="personal-information-setting-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="個人情報設定"/>
 			<div className="container text-[11px] leading-[13px]">
 				<div 
@@ -42,7 +41,6 @@ export default function PersonalInformationSetting() {
 					)
 				}
 			</div>
-			<PolicyTerm showMore/>
 		</div>
 	);
 }

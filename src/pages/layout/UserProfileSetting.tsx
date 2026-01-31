@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
 import ButtonContainer from '@/components/ui/ButtonContainer';
@@ -15,6 +14,7 @@ export default function UserProfileSetting() {
   	const navigate = useNavigate();
 
 	const [newAvatar, setNewAvatar] = useState(null);
+	const [value, setValue] = useState("");
 
 	const handleToTop = () => {
 		navigate(ROUTE_PATH?.TOP_NO_LOGIN);
@@ -38,9 +38,13 @@ export default function UserProfileSetting() {
 			reader.readAsDataURL(file);
 		}
 	};
+	
+	const handleChangeValue = (newValue) => {
+		setValue(newValue);
+	}
 
 	return (
-		<div className="user-profile-setting-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="user-profile-setting-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="プロフィール設定"/>
 			<div className="container">
 				<div className="flex flex-col gap-1 mb-5">
@@ -69,12 +73,13 @@ export default function UserProfileSetting() {
 					label="自己紹介"
 					maxLength={1000}
 					className="mb-9"
+					value={value}
+					onTextChange={handleChangeValue}
 				/>
 				<ButtonContainer onClick={handleToTop}>
 					更新する
 				</ButtonContainer>
 			</div>
-			<PolicyTerm showMore/>
 		</div>
 	);
 }

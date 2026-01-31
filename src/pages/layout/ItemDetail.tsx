@@ -1,5 +1,4 @@
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import SliderProduct from "@/components/ui/SliderProduct";
 import Seller from "@/components/ui/Seller";
 import AuctionRoom from "@/components/ui/AuctionRoom";
@@ -112,7 +111,7 @@ export default function ItemDetail() {
 	];
 
 	return (
-		<div className="item-detail-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="item-detail-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="商品詳細"/>
 			<div className="container flex flex-col">
 				<SliderProduct data={data} className="mb-[49px]"/>
@@ -124,7 +123,6 @@ export default function ItemDetail() {
 					2026年3月26日19:00頃〜　配信開始
 				</ButtonContainer>
 			</div>
-			<PolicyTerm/>
 		</div>
 	);
 }

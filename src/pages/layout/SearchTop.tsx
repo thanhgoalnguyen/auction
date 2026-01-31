@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import SearchTopItem from "@/components/ui/SearchTopItem";
 
 import { ROUTE_PATH } from '@/data/demo';
@@ -61,7 +60,7 @@ export default function SearchTop() {
 	}
 
 	return (
-		<div className="search-top-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="search-top-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="検索"/>
 			<div className="container flex flex-col gap-4">
 				<div className="flex items-center gap-3">
@@ -110,7 +109,6 @@ export default function SearchTop() {
 					</div>
 				)}
 			</div>
-			<PolicyTerm/>
 		</div>
 	);
 }

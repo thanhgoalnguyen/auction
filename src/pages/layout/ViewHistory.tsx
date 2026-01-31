@@ -1,5 +1,4 @@
 import PageHeader from "@/components/layout/PageHeader";
-import PolicyTerm from "@/components/ui/PolicyTerm";
 import ViewHistoryItem from "@/components/ui/ViewHistoryItem";
 
 import product1 from "@/assets/img/10.png";
@@ -50,7 +49,7 @@ export default function ViewHistory() {
 	]
 
 	return (
-		<div className="view-history-page flex flex-col items-center w-full h-max min-h-full">
+		<div className="view-history-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="閲覧履歴"/>
 			<div className="container">
 				{
@@ -59,7 +58,6 @@ export default function ViewHistory() {
 					)
 				}
 			</div>
-			<PolicyTerm showMore/>
 		</div>
 	);
 }
