@@ -15,6 +15,7 @@ export default function UserProfile() {
 	const navigate = useNavigate();
 	const [type, setType] = useState('sell');
 	const [number, setNumber] = useState(8);
+	const [isReadMore, setIsReadMore] = useState(false);
 
 	const listRecentProduct = [
 		{
@@ -74,17 +75,27 @@ export default function UserProfile() {
 			<div className="container flex flex-col w-full grow">
 				<UserProfileInfo isUserProfile className="mb-[25px]"/>
 				<div className="flex items-end gap-[42px] px-3 mb-9">
-					<div className="flex flex-col gap-[5px] grow h-10 text-[9px] leading-[11px]">
+					<div className="flex flex-col gap-[5px] grow text-[9px] leading-[11px]">
 						<p>使用頻度が低くなったブランド衣服などを売ってます。</p>
 						<p>最近始めました　わりと気分屋なので一定期間の出品になります</p>
-						<p>希少価値の高い物を出品しているので是非ご検討・・・・</p>
+						{
+							!isReadMore ? (
+								<p>希少価値の高い物を出品しているので是非ご検討・・・・</p>
+							) : (
+								<>
+									<p>希少価値の高い物を出品しているので是非ご検討</p>
+									<p>使用頻度が低くなったブランド衣服などを売ってます。</p>
+									<p>最近始めました　わりと気分屋なので一定期間の出品になります</p>
+								</>
+							)
+						}
 					</div>
-					<Link
-						to="/layout/"
+					<button
+						onClick={() => setIsReadMore(!isReadMore)}
 						className="text-[7px] leading-[8px]"
 					>
-						もっと見る
-					</Link>
+						{isReadMore ? "閉じる" : "もっと見る"}
+					</button>
 				</div>
 				<div className="flex items-center mb-2 border-b border-neutral-1100">
 					<button

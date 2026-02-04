@@ -9,22 +9,27 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 	showPasswordIcon?: boolean,
 	type?: string,
 	maxLength?: number,
-	title?: string
+	title?: string,
+	onTextChange?: (value: string) => void;
+	value?: string
 }
 
-export default function Input({className, value, name, label, placeholder, type = "text", showPasswordIcon, maxLength, title, ...rest}: InputProps) {
+export default function Input({className, value, name, label, placeholder, type = "text", showPasswordIcon, maxLength, title, onTextChange, ...rest}: InputProps) {
 	const [currentType, setCurrentType] = useState(type);
-	const [length, setLength] = useState(0);
+	const [length, setLength] = useState(value?.length);
 
 	const handleChangeType = () => {
 		setCurrentType(currentType === "password" ? "text" : "password");
 	}
 
 	const handleChange = (event) => {
+		const value = event?.target?.value;
+
 		if (maxLength) {
-			const value = event?.target?.value;
 			setLength(value?.length);
 		}
+
+		onTextChange(value)
 	}
 
   	return (

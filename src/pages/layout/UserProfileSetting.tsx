@@ -6,37 +6,28 @@ import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
 import ButtonContainer from '@/components/ui/ButtonContainer';
 
-import { ROUTE_PATH } from '@/data/demo';
-
 import avatar from "@/assets/icon/userProfileSetting/avatar.svg";
+
+import { ROUTE_PATH } from '@/data/demo';
+import getBase64 from "@/utils/getBase64";
 
 export default function UserProfileSetting() {
   	const navigate = useNavigate();
 
 	const [newAvatar, setNewAvatar] = useState(null);
+	const [loading, setLoading] = useState(false);
 	const [value, setValue] = useState("");
 
 	const handleToTop = () => {
 		navigate(ROUTE_PATH?.TOP_NO_LOGIN);
 	}
 
-	const handleChangeAvatar = (event) => {
+	const handleChangeAvatar = async (event) => {
   		const file = event.target.files[0];
-
-		if (file) {
-			if (!file.type.startsWith('image/')) {
-				return;
-			}
-
-			const reader = new FileReader();
-
-			reader.onload = (e) => {
-				const base64String = e.target.result;
-				setNewAvatar(base64String);
-			};
-
-			reader.readAsDataURL(file);
-		}
+		setLoading(true);
+		const avatar = await getBase64(file);
+		setNewAvatar(avatar);
+		setLoading(false);
 	};
 	
 	const handleChangeValue = (newValue) => {
@@ -47,19 +38,19 @@ export default function UserProfileSetting() {
 		<div className="user-profile-setting-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="プロフィール設定"/>
 			<div className="container">
-				<div className="flex flex-col gap-1 mb-5">
+				<div className={`flex flex-col gap-1 mb-5 ${loading && "opacity-50 pointer-events-none"}`}>
 					<p className="text-[11px] leading-[13px]">画像</p>
 					<label className="w-max cursor-pointer">
 						<input 
 							type="file" 
 							hidden 
-							accept="image/*"
+							accept=".jpg, .jpeg, .png, .webp"
 							onChange={handleChangeAvatar}
 						/>
 						<img
 							src={newAvatar ?? avatar}
 							alt="avatar"
-							className="w-[70px] aspect-square rounded-full"
+							className="w-[70px] aspect-square object-cover rounded-full"
 						/>
 					</label>
 				</div>

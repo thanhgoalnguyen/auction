@@ -1,22 +1,22 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import PageHeader from "@/components/layout/PageHeader";
 import ButtonContainer from '@/components/ui/ButtonContainer';
 import Input from '@/components/ui/Input';
-import AddButton from '@/components/ui/AddButton';
 import Textarea from '@/components/ui/Textarea';
 import Dropdown from '@/components/ui/Dropdown';
 import UploadImage from '@/components/ui/UploadImage';
 import MoneyInput from '@/components/ui/MoneyInput';
+import DeleteModal from '@/components/ui/DeleteModal';
 
-import camera from "@/assets/icon/post/camera.svg";
+import edit from "@/assets/icon/likeList/edit.svg";
 import arrowRight from "@/assets/icon/searchTop/arrow-right.svg";
 import product14 from "@/assets/img/14.png";
+import product22 from "@/assets/img/22.png";
+import product23 from "@/assets/img/23.png";
 
-import { ROUTE_PATH } from '@/data/demo';
-
-export default function PostItem() {
+export default function EditPostedItem() {
 		const desText = `色、素材、重さ、定価、注意点など
 
 例）20 年前にフランスで購入したブランド正規品です。
@@ -24,18 +24,18 @@ export default function PostItem() {
 
 ＃ジャケット　＃ジャケットコーデ`;
 
-  	const navigate = useNavigate();
-
 	const [des, setDes] = useState(desText);
+	const [name, setName] = useState("アーティザナル　トロンプルイユ");
 	const [money, setMoney] = useState();
-	const [listImage, setListImage] = useState([]);
-
-	const handleToTop = () => {
-		navigate(ROUTE_PATH?.TOP_NO_LOGIN);
-	}
+	const [open, setOpen] = useState(false);
+	const [listImage, setListImage] = useState([product22, product23]);
 
 	const handleChangeDes = (value) => {
 		setDes(value);
+	}
+
+	const handleChangeName = (value) => {
+		setName(value);
 	}
 
 	const handleChangeMoney = (value) => {
@@ -47,44 +47,45 @@ export default function PostItem() {
 	}
 	
 	return (
-		<div className="post-item-page page-container flex flex-col items-center w-full h-max">
-			<PageHeader title="商品の出品"/>
-			<div className="container">
+		<div className="edit-posted-item-page page-container flex flex-col items-center w-full h-max">
+			<PageHeader title="商品の情報を編集"/>
+			<div className="container flex flex-col w-full">
 				<UploadImage 
 					onChangeImage={handleChangeImage} 
 					listImage={listImage} 
 					className="mb-3"
 				/>
-				<p className="mb-5 text-[9px] leading-[11px] text-neutral-700">商品の全体、詳細、文字入りの写真をアップロードしてください。</p>
 				<Input
 					label="商品名"
 					maxLength={40}
 					className="mb-3 [&_.input-max-length]:text-neutral-700"
+					value={name}
+					onTextChange={handleChangeName}
 				/>
 				<div className="pb-[14px] mb-5 border-b border-neutral-300">
 					<p className="text-[11px] leading-[13px] text-neutral-700">商品の詳細</p>
 				</div>
 				<div className="pb-5 mb-5 border-b border-neutral-300">
-					<p className="mb-[10px] text-[11px] leading-[13px] text-neutral-500">カテゴリー</p>
-					<AddButton
-						onClick={handleToTop}
-						label="カテゴリーを選択する"
-					/>
+					<div className="flex justify-between items-center mb-[10px]">
+						<p className="text-[11px] leading-[13px] text-neutral-500">カテゴリー</p>
+						<button className="flex items-center gap-3">
+							<p className="text-[10px] leading-[12px]">編集する</p>
+							<img src={edit} alt="edit" className="w-[9px] h-[9px]"/>
+						</button>
+					</div>
+					<p className="text-[10px] leading-[12px] text-neutral-700">ファッション 〉 レディース 〉 ジャケット</p>
 				</div>
 				<div className="pb-5 mb-5 border-b border-neutral-300">
-					<p className="mb-[10px] text-[11px] leading-[13px] text-neutral-500">商品の状態</p>
-					<AddButton
-						onClick={handleToTop}
-						label="商品の状態を選択する"
-						className="mb-6"
-					/>
+					<div className="flex justify-between items-center mb-[10px]">
+						<p className="text-[11px] leading-[13px] text-neutral-500">商品の状態</p>
+						<button className="flex items-center gap-3">
+							<p className="text-[10px] leading-[12px]">編集する</p>
+							<img src={edit} alt="edit" className="w-[9px] h-[9px]"/>
+						</button>
+					</div>
+					<p className="mb-6 text-[10px] leading-[12px] text-neutral-700">未使用に近い 〉 数回使用し、あまり使用感がない</p>
 					<Textarea
-						label={<div className='flex items-center gap-3'>
-							<p>商品の説明</p>
-							<div className="flex items-center h-3 px-2 bg-neutral-1400 border border-black rounded-[2px]">
-								<p className="text-[9px] leading-[11px] text-neutral-700">任意</p>
-							</div>
-						</div>}
+						label="商品の説明"
 						maxLength={1000}
 						className="mb-4 [&_textarea]:h-[104px]"
 						value={des}
@@ -96,7 +97,7 @@ export default function PostItem() {
 				<div className="flex flex-col gap-8 pb-7 mb-4 border-b border-neutral-300">
 					<Dropdown
 						label="発送元の地域"
-						placeholder="選択してください"
+						placeholder="東京都"
 					/>
 					<MoneyInput
 						value={money}
@@ -132,8 +133,8 @@ export default function PostItem() {
 				</div>
 				<div className="pb-7 mb-5 border-b border-neutral-300">
 					<p className="mb-4 text-[11px] leading-[13px] text-neutral-500">この商品の入札開始予定時間</p>
-					<p className='mb-3 ml-7 text-[11px] leading-[13px] text-neutral-500'>2026年4月10日 20 : 00ごろ〜</p>
-					<div className="flex items-center gap-5 ml-11">
+					<p className='mb-3 text-[11px] leading-[13px] text-neutral-500'>2026年4月10日 20 : 00ごろ〜</p>
+					<div className="flex items-center gap-5">
 							<p className="text-[11px] leading-[13px] text-neutral-500">30秒間</p>
 							<p className="text-[9px] leading-[11px] text-neutral-700">※最大3600秒（1時間）</p>
 					</div>
@@ -142,15 +143,20 @@ export default function PostItem() {
 					<p>禁止されている<span>行為</span>及び<span>出品品</span>を必ずご確認ください。また、<span>加盟店規約</span>及び </p>
 					<p><span>プライバシーポリシー</span>に同意の上、「出品する」ボタンを押してください。</p>
 				</div>
-				<ButtonContainer isUpload>
-					<img
-						src={camera}
-						alt="camera"
-						className="w-[15px] h-[11px]"
-					/>
-					<p>出品する</p>
+				<ButtonContainer 
+					isUpload
+					className="mb-11"
+				>
+					<p>変更する</p>
 				</ButtonContainer>
+				<button
+					onClick={() => setOpen(true)}
+					className="mx-auto text-[11px] leading-[13px] text-red-200"
+				>
+					この商品を削除する
+				</button>
 			</div>
+			<DeleteModal title="この商品を削除しますか？" open={open} onClose={() => setOpen(false)}/>
 		</div>
 	);
 }

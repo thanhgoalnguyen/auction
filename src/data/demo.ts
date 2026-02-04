@@ -318,6 +318,9 @@ export const ROUTE_PATH = {
 	POST_ITEM: "/layout/post-item",
 	POSTED_ITEM_LIST: "/layout/posted-item-list",
 	CREATE_ROOM: "/layout/create-room",
+	EDIT_POSTED_ITEM: "/layout/edit-posted-item",
+	EDIT_ROOM: "/layout/edit-room",
+	PURCHASE_CONFIRMATION: "/layout/purchase-confirmation"
 };
 
 export const SUB_FOOTER_ROUTE = [
@@ -329,7 +332,10 @@ export const SUB_FOOTER_ROUTE = [
 
 export const HIDDEN_FOOTER = [
 	ROUTE_PATH?.POST_ITEM,
-	ROUTE_PATH?.CREATE_ROOM
+	ROUTE_PATH?.CREATE_ROOM,
+	ROUTE_PATH?.EDIT_POSTED_ITEM,
+	ROUTE_PATH?.EDIT_ROOM,
+	ROUTE_PATH?.PURCHASE_CONFIRMATION
 ]
 
 export const HIDDEN_POLICY_TERM = [
@@ -339,6 +345,9 @@ export const HIDDEN_POLICY_TERM = [
 	ROUTE_PATH?.POST_ITEM,
 	ROUTE_PATH?.ROOM_DETAIL,
 	ROUTE_PATH?.CREATE_ROOM,
+	ROUTE_PATH?.EDIT_POSTED_ITEM,
+	ROUTE_PATH?.EDIT_ROOM,
+	ROUTE_PATH?.PURCHASE_CONFIRMATION
 ]
 
 export const SHOW_MORE_POLICY_TERM = [

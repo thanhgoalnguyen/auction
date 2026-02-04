@@ -4,11 +4,12 @@ type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
     label?: React.ReactNode
     className?: string
     maxLength?: number
-	onTextChange: (value: string) => void;
+	onTextChange?: (value: string) => void;
+	value?: string
 }
 
-export default function Textarea({className, label, placeholder, maxLength, onTextChange, ...rest}: TextareaProps) {
-	const [length, setLength] = useState(0);
+export default function Textarea({className, label, placeholder, maxLength, onTextChange, value, ...rest}: TextareaProps) {
+	const [length, setLength] = useState(value ? value?.length : 0);
 
 	const handleChange = (event) => {
 		const value = event?.target?.value;
@@ -25,6 +26,7 @@ export default function Textarea({className, label, placeholder, maxLength, onTe
 			<div className='ml-1 text-[11px] leading-[13px] text-neutral-500'>{label}</div>
 			<textarea 
 				{...rest}
+				value={value}
 				placeholder={placeholder}
 				maxLength={maxLength}
 				onChange={handleChange}

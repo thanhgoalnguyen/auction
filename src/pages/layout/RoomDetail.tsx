@@ -8,14 +8,14 @@ import avatar from "@/assets/icon/userProfile/avatar.svg";
 import product6 from "@/assets/img/6.png";
 import product7 from "@/assets/img/7.png";
 import product9 from "@/assets/img/9.png";
-import productImg from "@/assets/img/30.png";
+import product30 from "@/assets/img/30.png";
 
 export default function RoomDetail() {
 	const data = {
 		name: "W&LT / Psychedelic Knit Vest",
 		bid: "30,000",
 		like: 32,
-		list: [productImg, productImg, productImg, productImg],
+		list: [product30, product30, product30, product30],
 		entry: 4
 	};
 
@@ -44,7 +44,7 @@ export default function RoomDetail() {
 			time: "19:20頃〜"
 		},
 		{
-			img: productImg,
+			img: product30,
 			name: "W&LT / Psychedelic Knit Vest",
 			bid: "30,000",
 			time: "19:30頃〜"
@@ -52,13 +52,13 @@ export default function RoomDetail() {
 	]
 
 	return (
-		<div className="item-detail-page page-container flex flex-col items-center w-full h-max">
+		<div className="room-detail-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="商品詳細"/>
 			<div className="container flex flex-col">
 				<SliderProduct data={data} isRoom className="mb-[54px]"/>
 				<Seller data={seller} className="mb-[33px]"/>
 				<TimeTable className="mb-[65px]" list={timeTable}/>
-				<ButtonContainer>
+				<ButtonContainer className="!fixed bottom-[72px] left-1/2 z-[1] translate-x-[-50%]">
 					2026年3月26日19:00頃〜　配信開始
 				</ButtonContainer>
 			</div>

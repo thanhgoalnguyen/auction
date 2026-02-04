@@ -82,10 +82,6 @@ export default function MyPage() {
 			link: "/",
 		},
 	];
-
-	const handleOpen = () => {
-		setOpen(!open);
-	};
  
 	return (
 		<div className="my-page-page page-container flex flex-col items-center w-full h-max">
@@ -170,14 +166,14 @@ export default function MyPage() {
 						list={policyTermsList} 
 					/>
 					<button
-						onClick={handleOpen}
+						onClick={() => setOpen(true)}
 						className="flex items-center w-full py-4 pl-[2px] border-b border-t border-neutral-300"
 					>
 						<p className="text-[11px] leading-[13px] text-neutral-600">ログアウト</p>
 					</button>
 				</div>
 			</div>
-			<LogOutModal open={open} handleOpen={handleOpen}/>
+			<LogOutModal open={open} onClose={() => setOpen(false)}/>
 		</div>
 	);
 }

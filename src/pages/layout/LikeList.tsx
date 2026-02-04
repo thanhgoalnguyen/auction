@@ -4,12 +4,14 @@ import PageHeader from "@/components/layout/PageHeader";
 import LikeListItem from "@/components/ui/LikeListItem";
 
 import checkbox from "@/assets/icon/likeList/checkbox.svg";
+import checkboxActive from "@/assets/icon/likeList/checkbox-active.avif";
 import edit from "@/assets/icon/likeList/edit.svg";
 import product1 from "@/assets/img/10.png";
 import product2 from "@/assets/img/11.png";
 
 export default function LikeList() {
 	const [isEdit, setIsEdit] = useState(false);
+	const [checked, setChecked] = useState(false);
 
 	const listLkeList = [
 		{
@@ -33,14 +35,17 @@ export default function LikeList() {
 			<PageHeader title="いいね！一覧"/>
 			<div className="container flex flex-col gap-4">
 				<div className="flex justify-between items-center px-3 text-[10px] leading-[12px]">
-					<label className="flex items-center gap-2 cursor-pointer">
+					<button
+						onClick={() => setChecked(!checked)}
+						className="flex items-center gap-2 cursor-pointer"
+					>
 						<img 
-							src={checkbox} 
+							src={checked ? checkboxActive : checkbox} 
 							alt="checkbox" 
 							className="w-2 h-2"
 						/>
 						<p>出品中のみ表示</p>
-					</label>
+					</button>
 					<button
 						onClick={handleSetEdit}
 					 	className="flex items-center gap-3"

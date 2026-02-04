@@ -119,7 +119,7 @@ export default function ItemDetail() {
 				<AuctionRoom data={auctionRoom}/>
 				<ProductFromSeller list={listProductFromSeller}/>
 				<RecommendThisProduct list={listRecommendThisProduct}/>
-				<ButtonContainer>
+				<ButtonContainer className="!fixed bottom-[72px] left-1/2 z-[1] translate-x-[-50%]">
 					2026年3月26日19:00頃〜　配信開始
 				</ButtonContainer>
 			</div>

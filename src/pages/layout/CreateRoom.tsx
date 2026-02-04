@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import PageHeader from "@/components/layout/PageHeader";
 import ButtonContainer from '@/components/ui/ButtonContainer';
-import UploadButton from '@/components/ui/UploadButton';
+import UploadImage from '@/components/ui/UploadImage';
 import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 
@@ -22,6 +22,7 @@ export default function CreateRoom() {
   	const navigate = useNavigate();
 
 	const [des, setDes] = useState(desText);
+	const [listImage, setListImage] = useState([]);
 
 	const handleToTop = () => {
 		navigate(ROUTE_PATH?.TOP_NO_LOGIN);
@@ -31,13 +32,20 @@ export default function CreateRoom() {
 		setDes(value);
 	}
 
+	const handleChangeImage = (newList) => {
+		setListImage(newList);
+	}
+
 	return (
 		<div className="create-room-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="オークションルームの作成"/>
 			<div className="container flex flex-col">
 				<button className="ml-auto mb-1 text-[10px] leading-[12px] text-neutral-600">戻る</button>
-				<p className="mb-12 text-[11px] leading-[13px] text-neutral-500">出品画像（最大20枚）</p>
-				<UploadButton className="mb-8"/>
+				<UploadImage 
+					onChangeImage={handleChangeImage} 
+					listImage={listImage} 
+					className="mb-8"
+				/>
 				<Input 
 					label="オークションルーム名" 
 					maxLength={40}
