@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import PageHeader from "@/components/layout/PageHeader";
 import SliderProduct from "@/components/ui/SliderProduct";
 import Seller from "@/components/ui/Seller";
@@ -12,8 +14,11 @@ import product6 from "@/assets/img/6.png";
 import product7 from "@/assets/img/7.png";
 import product8 from "@/assets/img/8.png";
 import product9 from "@/assets/img/9.png";
+import { ROUTE_PATH } from "@/data/demo";
 
 export default function ItemDetail() {
+	const navigate = useNavigate();
+
 	const data = {
 		name: "W&LT / Psychedelic Knit Vest",
 		bid: "30,000",
@@ -110,6 +115,10 @@ export default function ItemDetail() {
 		},
 	];
 
+	const handleToTransactionSeller = () => {
+		navigate(ROUTE_PATH?.TRANSACTION_SCREEN_SELLER);
+	}
+
 	return (
 		<div className="item-detail-page page-container flex flex-col items-center w-full h-max">
 			<PageHeader title="商品詳細"/>
@@ -119,7 +128,10 @@ export default function ItemDetail() {
 				<AuctionRoom data={auctionRoom}/>
 				<ProductFromSeller list={listProductFromSeller}/>
 				<RecommendThisProduct list={listRecommendThisProduct}/>
-				<ButtonContainer className="!fixed bottom-[72px] left-1/2 z-[1] translate-x-[-50%]">
+				<ButtonContainer
+				 	className="!fixed bottom-[72px] left-1/2 z-[1] translate-x-[-50%]"
+					onClick={handleToTransactionSeller}
+				>
 					2026年3月26日19:00頃〜　配信開始
 				</ButtonContainer>
 			</div>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import PageHeader from "@/components/layout/PageHeader";
 import ButtonContainer from '@/components/ui/ButtonContainer';
@@ -9,12 +9,13 @@ import Textarea from '@/components/ui/Textarea';
 import Dropdown from '@/components/ui/Dropdown';
 import UploadImage from '@/components/ui/UploadImage';
 import MoneyInput from '@/components/ui/MoneyInput';
+import SelectCategoryModal from '@/components/ui/SelectCategoryModal';
+import SelectStatusModal from '@/components/ui/SelectStatusModal';
+import SelectRoomModal from '@/components/ui/SelectRoomModal';
 
 import camera from "@/assets/icon/post/camera.svg";
 import arrowRight from "@/assets/icon/searchTop/arrow-right.svg";
-import product14 from "@/assets/img/14.png";
-
-import { ROUTE_PATH } from '@/data/demo';
+import edit from "@/assets/icon/likeList/edit.svg";
 
 export default function PostItem() {
 		const desText = `色、素材、重さ、定価、注意点など
@@ -23,16 +24,15 @@ export default function PostItem() {
 数回使用しましたが、痛みも少なく非常に良品です。
 
 ＃ジャケット　＃ジャケットコーデ`;
-
-  	const navigate = useNavigate();
-
 	const [des, setDes] = useState(desText);
 	const [money, setMoney] = useState();
 	const [listImage, setListImage] = useState([]);
-
-	const handleToTop = () => {
-		navigate(ROUTE_PATH?.TOP_NO_LOGIN);
-	}
+	const [openCategory, setOpenCategory] = useState(false);
+	const [category, setCategory] = useState(null);
+	const [openStatus, setOpenStatus] = useState(false);
+	const [status, setStatus] = useState(null);
+	const [openRoom, setOpenRoom] = useState(false);
+	const [room, setRoom] = useState(null);
 
 	const handleChangeDes = (value) => {
 		setDes(value);
@@ -44,6 +44,18 @@ export default function PostItem() {
 
 	const handleChangeImage = (newList) => {
 		setListImage(newList);
+	}
+
+	const handleSelectCategory = (value) => {
+		setCategory(value);
+	}
+
+	const handleSelectStatus = (value) => {
+		setStatus(value);
+	}
+
+	const handleSelectRoom = (value) => {
+		setRoom(value);
 	}
 	
 	return (
@@ -65,19 +77,62 @@ export default function PostItem() {
 					<p className="text-[11px] leading-[13px] text-neutral-700">商品の詳細</p>
 				</div>
 				<div className="pb-5 mb-5 border-b border-neutral-300">
-					<p className="mb-[10px] text-[11px] leading-[13px] text-neutral-500">カテゴリー</p>
-					<AddButton
-						onClick={handleToTop}
-						label="カテゴリーを選択する"
-					/>
+					<div className="flex justify-between items-center mb-[10px]">
+						<p className="text-[11px] leading-[13px] text-neutral-500">カテゴリー</p>
+						{
+							category && (
+								<button 
+									onClick={() => setOpenCategory(true)}
+									className="flex items-center gap-3 w-max"
+								>
+									<p className="text-[10px] leading-[12px]">編集する</p>
+									<img
+										src={edit}
+										alt="edit"
+										className="w-[10px] h-[10px]"
+									/>
+								</button>
+							)
+						}
+					</div>
+					{category ? (
+						<p className="text-[9px] leading-[11px] text-neutral-700">{category?.title}</p>
+					) : (
+						<AddButton
+							onClick={() => setOpenCategory(true)}
+							label="カテゴリーを選択する"
+						/>
+					)}
 				</div>
 				<div className="pb-5 mb-5 border-b border-neutral-300">
-					<p className="mb-[10px] text-[11px] leading-[13px] text-neutral-500">商品の状態</p>
-					<AddButton
-						onClick={handleToTop}
-						label="商品の状態を選択する"
-						className="mb-6"
-					/>
+					<div className="flex justify-between items-center mb-[10px]">
+						<p className="text-[11px] leading-[13px] text-neutral-500">商品の状態</p>
+						{
+							status && (
+								<button 
+									onClick={() => setOpenStatus(true)}
+									className="flex items-center gap-3 w-max"
+								>
+									<p className="text-[10px] leading-[12px]">編集する</p>
+									<img
+										src={edit}
+										alt="edit"
+										className="w-[10px] h-[10px]"
+									/>
+								</button>
+							)
+						}
+					</div>
+					{status ? (
+						<p className="mb-6 text-[9px] leading-[11px] text-neutral-700">{status?.title}</p>
+					) : (
+						<AddButton
+							onClick={() => setOpenStatus(true)}
+							label="商品の状態を選択する"
+							className="mb-6"
+
+						/>
+					)}
 					<Textarea
 						label={<div className='flex items-center gap-3'>
 							<p>商品の説明</p>
@@ -104,36 +159,46 @@ export default function PostItem() {
 					/>
 				</div>
 				<div className="flex flex-col gap-3 pb-4 mb-5 border-b border-neutral-300">
-					<p className="text-[11px] leading-[13px] text-neutral-500">オークションルーム</p>
-					<Link
-						to="/layout"
-						className="flex items-center gap-4 px-2"
+					<button 
+						onClick={() => setOpenRoom(true)}
+						className="w-max text-[11px] leading-[13px] text-neutral-500"
 					>
-						<img
-							src={product14}
-							alt="product"
-							className="w-[72px] aspect-square"
-						/>
-						<div className="flex justify-between items-center gap-1 grow">
-							<div className="flex flex-col gap-3 text-neutral-500">
-								<p className="text-[11px] leading-[13px]">オークションルームの名前</p>
-								<div className="flex items-center gap-2 text-[10px] leading-[12px]">
-									<p>配信開始</p>
-									<p>2026年4月10日20:00〜</p>
+						オークションルーム
+					</button>
+					{
+						room && (
+							<Link
+								to={room?.link}
+								className="flex items-center gap-4 px-2"
+							>
+								<img
+									src={room?.img}
+									alt="product"
+									className="w-[72px] aspect-square"
+								/>
+								<div className="flex justify-between items-center gap-1 grow">
+									<div className="flex flex-col gap-3 text-neutral-500">
+										<p className="text-[11px] leading-[13px]">{room?.name}</p>
+										<div className="flex items-center text-[10px] leading-[12px]">
+											<p className="mr-8">配信開始</p>
+											<p className="mr-9">{room?.day}</p>
+											<p>{room?.time}</p>
+										</div>
+									</div>
+									<img 
+										src={arrowRight} 
+										alt="arrow" 
+										className="w-[5px] h-2"
+									/>
 								</div>
-							</div>
-							<img 
-								src={arrowRight} 
-								alt="arrow" 
-								className="w-[5px] h-2"
-							/>
-						</div>
-					</Link>
+							</Link>
+						)
+					}
 				</div>
 				<div className="pb-7 mb-5 border-b border-neutral-300">
 					<p className="mb-4 text-[11px] leading-[13px] text-neutral-500">この商品の入札開始予定時間</p>
-					<p className='mb-3 ml-7 text-[11px] leading-[13px] text-neutral-500'>2026年4月10日 20 : 00ごろ〜</p>
-					<div className="flex items-center gap-5 ml-11">
+					<p className='mb-3 text-[11px] leading-[13px] text-neutral-500'>2026年4月10日 20 : 00ごろ〜</p>
+					<div className="flex items-center gap-5">
 							<p className="text-[11px] leading-[13px] text-neutral-500">30秒間</p>
 							<p className="text-[9px] leading-[11px] text-neutral-700">※最大3600秒（1時間）</p>
 					</div>
@@ -151,6 +216,9 @@ export default function PostItem() {
 					<p>出品する</p>
 				</ButtonContainer>
 			</div>
+			<SelectCategoryModal defaultValue={category} handleSelect={handleSelectCategory} open={openCategory} onClose={() => setOpenCategory(false)}/>
+			<SelectStatusModal defaultValue={status} handleSelect={handleSelectStatus} open={openStatus} onClose={() => setOpenStatus(false)}/>
+			<SelectRoomModal defaultValue={room} handleSelect={handleSelectRoom} open={openRoom} onClose={() => setOpenRoom(false)}/>
 		</div>
 	);
 }

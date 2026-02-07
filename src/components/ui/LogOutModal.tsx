@@ -13,7 +13,7 @@ export default function LogOutModal({open, onClose}) {
 	return (
 		<Modal open={open} onClose={onClose}>
 			<div
-				className="flex flex-col items-center w-full pt-5 pb-7 px-1"
+				className="flex flex-col items-center w-[291px] max-w-full pt-5 pb-7 px-1"
 			>
 				<p className="mb-5 text-[14px] leading-[17px] text-neutral-200">ログアウトしますか？</p>
 				<ButtonContainer 

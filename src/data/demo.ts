@@ -320,7 +320,9 @@ export const ROUTE_PATH = {
 	CREATE_ROOM: "/layout/create-room",
 	EDIT_POSTED_ITEM: "/layout/edit-posted-item",
 	EDIT_ROOM: "/layout/edit-room",
-	PURCHASE_CONFIRMATION: "/layout/purchase-confirmation"
+	PURCHASE_CONFIRMATION: "/layout/purchase-confirmation",
+	TRANSACTION_SCREEN_SELLER: "/layout/transaction-screen-seller",
+	TRANSACTION_SCREEN_BUYER: "/layout/transaction-screen-buyer",
 };
 
 export const SUB_FOOTER_ROUTE = [

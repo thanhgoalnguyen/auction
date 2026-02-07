@@ -9,15 +9,17 @@ import { ROUTE_PATH } from '@/data/demo';
 
 import edit from "@/assets/icon/likeList/edit.svg";
 import editActive from "@/assets/icon/likeList/edit-active.svg";
+import product12 from "@/assets/img/12.png";
+import method from "@/assets/icon/purchaseConfirmation/method.svg";
 
 export default function PurchaseConfirmation() {
   	const navigate = useNavigate();
 
-	const [isEditMethod, setIsEditMethod] = useState(false);
-	const [isEditAddress, setIsEditAddress] = useState(false);
+	const [hasMethod, setHasMethod] = useState(false);
+	const [hasAddress, setHasAddress] = useState(false);
 
-	const handleToTop = () => {
-		navigate(ROUTE_PATH?.TOP_NO_LOGIN);
+	const handleToTransactionBuyer = () => {
+		navigate(`${ROUTE_PATH?.TRANSACTION_SCREEN_BUYER}?step=step-2`);
 	}
 
 	return (
@@ -28,7 +30,7 @@ export default function PurchaseConfirmation() {
 					戻る
 				</button>
 				<div className="flex items-center gap-[18px] pb-5 px-[6px] mb-[18px] border-b border-neutral-300">
-					<img src={edit} alt="product" className="w-[84px] h-[84px]"/>
+					<img src={product12} alt="product" className="w-[84px] h-[84px]"/>
 					<div className="flex flex-col gap-1 grow">
 						<p className="text-[14px] leading-[17px]">DRIES VAN NOTEN スタッズ</p>
 						<div className="flex justify-between items-center">
@@ -44,19 +46,21 @@ export default function PurchaseConfirmation() {
 					<div className="flex justify-between items-center">
 						<p className="text-[11px] leading-[13px] text-neutral-700">支払い方法</p>
 						<button
-							onClick={() => setIsEditMethod(!isEditMethod)}
-							className="flex items-center gap-3"
+							className={`flex items-center gap-3 ${!hasMethod && "pointer-events-none" }`}
 						>
-							<p className={`text-[10px] leading-[12px] ${isEditMethod && "text-neutral-1100"}`}>編集する</p>
-							<img src={isEditMethod ? editActive : edit} alt="edit" className="w-[10px] h-[10px]"/>
+							<p className={`text-[10px] leading-[12px] ${!hasMethod && "text-neutral-1100"}`}>編集する</p>
+							<img src={!hasMethod ? editActive : edit} alt="edit" className="w-[10px] h-[10px]"/>
 						</button>
 					</div>
 					{
-						isEditMethod ? (
-							<AddButton label="支払い方法を追加する"/>
+						!hasMethod ? (
+							<AddButton 
+								onClick={() => setHasMethod(!hasMethod)}
+								label="支払い方法を追加する"
+							 />
 						) : (
 							<div className="flex items-center gap-[10px]">
-								<img src={edit} alt="method" className="w-9 h-[18px]"/>
+								<img src={method} alt="method" className="w-9 h-[18px]"/>
 								<div className="flex flex-col gap-1 grow">
 									<p className="text-[9px] leading-[11px] text-neutral-500">クレジットカード決済</p>
 									<div className="flex items-center">
@@ -77,16 +81,18 @@ export default function PurchaseConfirmation() {
 					<div className="flex justify-between items-center">
 						<p className="text-[11px] leading-[13px] text-neutral-700">配送先</p>
 						<button
-							onClick={() => setIsEditAddress(!isEditAddress)}
-							className="flex items-center gap-3"
+							className={`flex items-center gap-3 ${!hasAddress && "pointer-events-none" }`}
 						>
-							<p className={`text-[10px] leading-[12px] ${isEditAddress && "text-neutral-1100"}`}>編集する</p>
-							<img src={isEditAddress ? editActive : edit} alt="edit" className="w-[10px] h-[10px]"/>
+							<p className={`text-[10px] leading-[12px] ${!hasAddress && "text-neutral-1100"}`}>編集する</p>
+							<img src={!hasAddress ? editActive : edit} alt="edit" className="w-[10px] h-[10px]"/>
 						</button>
 					</div>
 					{
-						isEditAddress ? (
-							<AddButton label="配送先住所を追加する"/>
+						!hasAddress ? (
+							<AddButton 
+								onClick={() => setHasAddress(!hasAddress)}
+								label="配送先住所を追加する"
+							/>
 						) : (
 							<div>
 								<div className="w-max py-[2px] px-[6px] mb-3 bg-neutral-1400 rounded-[999px]">
@@ -121,7 +127,7 @@ export default function PurchaseConfirmation() {
 					</div>
 				</div>
 				<p className="mb-5 ml-[14px] text-[9px] leading-[11px] text-neutral-700 [&_span]:text-red-200"><span>利用規約</span>及び<span>プライバシーポリシー</span>に同意の上、ご購入ください。</p>
-				<ButtonContainer onClick={handleToTop}>
+				<ButtonContainer onClick={handleToTransactionBuyer}>
 					購入を確定する
 				</ButtonContainer>
 			</div>

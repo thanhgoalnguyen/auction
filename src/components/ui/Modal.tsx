@@ -43,7 +43,7 @@ export default function Modal({ children, open, onClose, isHiddenFooter }: Modal
 			<div className="relative flex justify-center w-full h-max min-h-full p-5">
 				<div
 					ref={modalRef}
-					className="zoom-in-ani relative z-[1] w-full max-w-[291px] my-auto bg-dark-300 rounded-[8px]"
+					className="zoom-in-ani relative z-[1] w-max max-w-full my-auto bg-dark-300 rounded-[8px]"
 				>
 					{children}
 				</div>

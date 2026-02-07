@@ -33,7 +33,7 @@ export default function Input({className, value, name, label, placeholder, type 
 	}
 
   	return (
-		<div className={`input-container flex flex-col gap-[6px] ${className}`}>
+		<div className={`input-container flex flex-col gap-[6px] w-full ${className || ""}`}>
 			<div className='flex flex-col gap-1'>
 				{
 					label && (
