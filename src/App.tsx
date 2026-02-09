@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// import { dummyUsers, dummySessionEntity } from "./data/mock-data";
+// import { dummyUsers, dummySessionEntity } from './data/mock-data'
 
 import Layout from "./layouts/Layout.tsx";
 
@@ -28,13 +28,20 @@ import EmailPasswordSetting from "./pages/layout/EmailPasswordSetting.tsx";
 import ShippingAddressRegistration from "./pages/layout/ShippingAddressRegistration.tsx";
 import Post from "./pages/layout/Post.tsx";
 import PostItem from "./pages/layout/PostItem.tsx";
+import PostedItemList from "./pages/layout/PostedItemList.tsx";
+import CreateRoom from "./pages/layout/CreateRoom.tsx";
+import EditPostedItem from "./pages/layout/EditPostedItem.tsx";
+import EditRoom from "./pages/layout/EditRoom.tsx";
+import PurchaseConfirmation from "./pages/layout/PurchaseConfirmation.tsx";
+import TransactionScreenBuyer from "./pages/layout/TransactionScreenBuyer.tsx";
+import TransactionScreenSeller from "./pages/layout/TransactionScreenSeller.tsx";
 
 import { ROUTE_PATH } from "./data/demo.ts";
 
 function App() {
 	// dummy data for "success" page.
-	// const organizer = dummyUsers.get(1);
-	// const sessionEntity = dummySessionEntity;
+	//   const organizer = dummyUsers.get(1)
+	//   const sessionEntity = dummySessionEntity
 
 	//   document.addEventListener('contextmenu', event => event.preventDefault())
 	return (
@@ -86,6 +93,28 @@ function App() {
 					/>
 					<Route path={ROUTE_PATH?.POST} element={<Post />} />
 					<Route path={ROUTE_PATH?.POST_ITEM} element={<PostItem />} />
+					<Route
+						path={ROUTE_PATH?.POSTED_ITEM_LIST}
+						element={<PostedItemList />}
+					/>
+					<Route path={ROUTE_PATH?.CREATE_ROOM} element={<CreateRoom />} />
+					<Route
+						path={ROUTE_PATH?.EDIT_POSTED_ITEM}
+						element={<EditPostedItem />}
+					/>
+					<Route path={ROUTE_PATH?.EDIT_ROOM} element={<EditRoom />} />
+					<Route
+						path={ROUTE_PATH?.PURCHASE_CONFIRMATION}
+						element={<PurchaseConfirmation />}
+					/>
+					<Route
+						path={ROUTE_PATH?.TRANSACTION_SCREEN_BUYER}
+						element={<TransactionScreenBuyer />}
+					/>
+					<Route
+						path={ROUTE_PATH?.TRANSACTION_SCREEN_SELLER}
+						element={<TransactionScreenSeller />}
+					/>
 				</Route>
 			</Routes>
 			{/* <Routes>
