@@ -9,7 +9,8 @@ export default function AddButton ({label, className, ...rest}: AddButtonProps) 
 	return (
 		<button 
 			{...rest}
-			className={`flex items-center gap-4 ml-[10px] ${className}`}
+			type="button"
+			className={`flex items-center gap-4 w-max ml-[10px] ${className}`}
 		>
 			<img
 				src={plus}

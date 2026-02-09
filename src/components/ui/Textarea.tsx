@@ -30,7 +30,7 @@ export default function Textarea({className, label, placeholder, maxLength, onTe
 				placeholder={placeholder}
 				maxLength={maxLength}
 				onChange={handleChange}
-				className="w-full h-[117px] py-3 px-2 mb-[6px] text-[7px] leading-[8px] text-black bg-neutral-300 rounded-[2px] outline-none resize-none"
+				className="w-full h-[117px] py-3 px-2 mb-[6px] text-[9px] leading-[11px] text-black bg-neutral-300 rounded-[2px] outline-none resize-none placeholder:text-black"
 			>
 			</textarea>
 			{

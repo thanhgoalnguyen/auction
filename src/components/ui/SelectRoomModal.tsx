@@ -1,43 +1,7 @@
 import Modal from "./Modal";
 
-import product6 from "@/assets/img/6.png";
-import product9 from "@/assets/img/9.png";
-import product14 from "@/assets/img/14.png";
-import product30 from "@/assets/img/30.png";
-
-const listRoom = [
-	{	
-		name: "オークションルームNo.1",
-		day: "2026年3月20日",
-		time: "19:00〜",
-		img: product14,
-		id: 1
-	},
-	{	
-		name: "オークションルームNo.1",
-		day: "2026年3月20日",
-		time: "19:00〜",
-		img: product9,
-		id: 2
-	},
-	{	
-		name: "オークションルームNo.2",
-		day: "2026年4月10日",
-		time: "16:00〜",
-		img: product6,
-		id: 3
-	},
-	{	
-		name: "オークションルームNo.3",
-		day: "2026年5月8日",
-		time: "18:00〜",
-		img: product30,
-		id: 4
-	},
-]
-
-export default function SelectRoomModal({open, onClose, handleSelect, defaultValue}) {
-	const filteredList = listRoom.filter(item => item.id !== defaultValue?.id);
+export default function SelectRoomModal({open, onClose, handleSelect, defaultValue, list}) {
+	const filteredList = list?.filter(item => item.id !== defaultValue?.id);
 
 	const handleSelectItem = (item) => {
 		handleSelect(item);

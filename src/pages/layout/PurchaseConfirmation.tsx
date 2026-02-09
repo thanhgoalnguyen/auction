@@ -81,7 +81,7 @@ export default function PurchaseConfirmation() {
 					<div className="flex justify-between items-center">
 						<p className="text-[11px] leading-[13px] text-neutral-700">配送先</p>
 						<button
-							className={`flex items-center gap-3 ${!hasAddress && "pointer-events-none" }`}
+							className={`flex items-center gap-3 ${!hasAddress && "pointer-events-none"}`}
 						>
 							<p className={`text-[10px] leading-[12px] ${!hasAddress && "text-neutral-1100"}`}>編集する</p>
 							<img src={!hasAddress ? editActive : edit} alt="edit" className="w-[10px] h-[10px]"/>

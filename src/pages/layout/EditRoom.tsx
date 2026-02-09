@@ -1,12 +1,14 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import PageHeader from "@/components/layout/PageHeader";
 import ButtonContainer from '@/components/ui/ButtonContainer';
 import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import UploadImage from '@/components/ui/UploadImage';
-import DeleteModal from '@/components/ui/DeleteModal';
 import TimeTable from '@/components/ui/TimeTable';
+
+import { ROUTE_PATH } from '@/data/demo';
 
 import product6 from "@/assets/img/6.png";
 import product7 from "@/assets/img/7.png";
@@ -46,11 +48,10 @@ export default function EditRoom() {
 			bid: "30,000",
 			time: "21:10頃〜"
 		},
-	]
+	];
 
 	const [des, setDes] = useState(desText);
 	const [name, setName] = useState("オークションルーム No.1");
-	const [open, setOpen] = useState(false);
 	const [listImage, setListImage] = useState([product14, product10]);
 
 	const handleChangeDes = (value) => {
@@ -105,14 +106,13 @@ export default function EditRoom() {
 				>
 					<p>変更する</p>
 				</ButtonContainer>
-				<button
-					onClick={() => setOpen(true)}
+				<Link
+					to={ROUTE_PATH?.ROOM_DETAIL}
 					className="mx-auto text-[11px] leading-[13px] text-red-200"
 				>
 					このオークションルームを削除する
-				</button>
+				</Link>
 			</div>
-			<DeleteModal title="このオークションルームを削除する" open={open} onClose={() => setOpen(false)}/>
 		</div>
 	);
 }

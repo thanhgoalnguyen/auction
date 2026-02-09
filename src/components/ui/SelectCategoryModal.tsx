@@ -3,35 +3,8 @@ import Input from "./Input";
 
 import arrowRight from "@/assets/icon/searchTop/arrow-right.svg";
 
-const listCategory = [
-	{	
-		title: "本・雑誌・漫画 > 本 > 洋書",
-		id: 1
-	},
-	{	
-		title: "ファッション",
-		id: 2
-	},
-	{	
-		title: "ベビー・キッズ",
-		id: 3
-	},
-	{	
-		title: "ゲーム・おもちゃ・グッズ",
-		id: 4
-	},
-	{	
-		title: "ホビー・楽器・アート",
-		id: 5
-	},	
-	{	
-		title: "チケット",
-		id: 6
-	},
-]
-
-export default function SelectCategoryModal({open, onClose, handleSelect, defaultValue}) {
-	const filteredList = listCategory.filter(item => item.id !== defaultValue?.id);
+export default function SelectCategoryModal({open, onClose, handleSelect, defaultValue, list}) {
+	const filteredList = list?.filter(item => item.id !== defaultValue?.id);
 
 	const handleSelectItem = (item) => {
 		handleSelect(item);
@@ -46,7 +19,7 @@ export default function SelectCategoryModal({open, onClose, handleSelect, defaul
 				<p className="mb-5 text-[14px] leading-[17px] text-neutral-200">カテゴリー</p>
 				<button
 					onClick={onClose}
-					className="mb-2 ml-auto text-[14px] leading-[17px]"
+					className="mb-2 ml-auto text-[10px] leading-[12px]"
 				>
 					戻る
 				</button>

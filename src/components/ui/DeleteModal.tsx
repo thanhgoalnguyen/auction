@@ -1,7 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 import ButtonContainer from "@/components/ui/ButtonContainer";
 import Modal from "./Modal";
 
+import { ROUTE_PATH } from "@/data/demo";
+
 export default function DeleteModal({title, open, onClose}) {
+	const navigate = useNavigate();
+
+	const handleAccept = () => {
+		navigate(ROUTE_PATH?.POST_ITEM);
+	}
 	return (
 		<Modal open={open} onClose={onClose} isHiddenFooter>
 			<div
@@ -13,7 +22,7 @@ export default function DeleteModal({title, open, onClose}) {
 				
 					className="mb-[22px]"
 					kind="primary-large"
-					onClick={onClose}
+					onClick={handleAccept}
 				>
 					削除する
 				</ButtonContainer>

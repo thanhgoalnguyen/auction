@@ -1,45 +1,7 @@
 import Modal from "./Modal";
 
-const listStatus = [
-	{	
-		title: "未使用に近い > 数回使用し、あまり使用感がない",
-		des: "未使用に近い > 数回使用し、あまり使用感がない",
-		id: 1
-	},
-	{	
-		title: "新品、未使用",
-		des: "新品で購入し、一度も使用していない",
-		id: 2
-	},
-	{	
-		title: "未使用に近い",
-		des: "数回使用し、あまり使用感がない",
-		id: 3
-	},
-	{	
-		title: "目立った傷や汚れなし",
-		des: "細かな使用感・傷・汚れはあるが、目立たない",
-		id: 4
-	},
-	{	
-		title: "やや傷や汚れあり",
-		des: "目につく傷や汚れがある",
-		id: 5
-	},	
-	{	
-		title: "傷や汚れあり",
-		des: "多くの人が見てわかるような傷や汚れがある",
-		id: 6
-	},
-	{	
-		title: "全体的に状態が悪い",
-		des: "商品の全体に目立つ傷や汚れ、ダメージがある",
-		id: 7
-	},
-]
-
-export default function SelectStatusModal({open, onClose, handleSelect, defaultValue}) {
-	const filteredList = listStatus.filter(item => item.id !== defaultValue?.id);
+export default function SelectStatusModal({open, onClose, handleSelect, defaultValue, list}) {
+	const filteredList = list?.filter(item => item.id !== defaultValue?.id);
 
 	const handleSelectItem = (item) => {
 		handleSelect(item);

@@ -16,7 +16,7 @@ type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 export default function Input({className, value, name, label, placeholder, type = "text", showPasswordIcon, maxLength, title, onTextChange, ...rest}: InputProps) {
 	const [currentType, setCurrentType] = useState(type);
-	const [length, setLength] = useState(value?.length);
+	const [length, setLength] = useState(value?.length || 0);
 
 	const handleChangeType = () => {
 		setCurrentType(currentType === "password" ? "text" : "password");
@@ -41,7 +41,7 @@ export default function Input({className, value, name, label, placeholder, type 
 					)
 				}
 				<div className="flex items-center gap-1 w-full h-[29px] px-[13px] bg-neutral-300 border border-black rounded-[2px]">
-					<input {...rest} onChange={handleChange} type={currentType} maxLength={maxLength} value={value} name={name} placeholder={placeholder} className='grow text-[7px] leading-[8px] text-black bg-transparent outline-none placeholder:text-black'/>
+					<input {...rest} onChange={handleChange} type={currentType} maxLength={maxLength} value={value} name={name} placeholder={placeholder} className='grow text-[9px] leading-[11px] text-black bg-transparent outline-none placeholder:text-black'/>
 					{
 						(type === "password" && showPasswordIcon) && (
 							<button onClick={handleChangeType}>
